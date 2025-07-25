@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				mono: ['JetBrains Mono', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,6 +56,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				surface: {
+					DEFAULT: 'hsl(var(--surface))',
+					elevated: 'hsl(var(--surface-elevated))'
+				},
+				'text-subtle': 'hsl(var(--text-subtle))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -70,25 +79,56 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'typewriter': {
+					from: { width: '0' },
+					to: { width: '100%' }
+				},
+				'blink-caret': {
+					'from, to': { 'border-color': 'transparent' },
+					'50%': { 'border-color': 'hsl(var(--accent))' }
+				},
+				'fade-in-up': {
 					from: {
-						height: 'var(--radix-accordion-content-height)'
+						opacity: '0',
+						transform: 'translateY(30px)'
 					},
 					to: {
-						height: '0'
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'slide-in-right': {
+					from: {
+						opacity: '0',
+						transform: 'translateX(30px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateX(0)'
 					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'typewriter': 'typewriter 3s steps(40, end)',
+				'blink-caret': 'blink-caret 0.75s step-end infinite',
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'slide-in-right': 'slide-in-right 0.6s ease-out forwards'
+			},
+			backgroundImage: {
+				'gradient-warm': 'var(--gradient-warm)'
+			},
+			boxShadow: {
+				'soft': 'var(--shadow-soft)',
+				'medium': 'var(--shadow-medium)'
 			}
 		}
 	},
