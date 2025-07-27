@@ -28,53 +28,76 @@ const Experience = () => {
 
   const experiences = [
     {
-      period: "2022 - Present",
-      company: "TechCorp Inc.",
-      position: "Senior Full-Stack Developer",
-      description: "Lead development of scalable web applications serving 100K+ users. Architect and implement microservices using Node.js and React. Mentor junior developers and drive technical decisions.",
+      period: "Jan 2025 - Present",
+      company: "One Profit",
+      position: "AI Developer & Technical Consultant",
+      description: "Built Python-based trade-prediction models leveraging pandas, scikit-learn, and external APIs. Advised on AI implementation, system architecture, and deployment pipelines.",
       achievements: [
-        "Reduced application load time by 40% through optimization",
-        "Led migration to microservices architecture",
-        "Implemented CI/CD pipeline reducing deployment time by 60%"
+        "Developed machine-learning models for financial predictions",
+        "Implemented real-time data ingestion pipelines",
+        "Advised on AI implementation strategies"
       ],
-      tech: ["React", "Node.js", "AWS", "PostgreSQL"]
+      tech: ["Python", "scikit-learn", "pandas", "REST APIs"]
     },
     {
-      period: "2020 - 2022",
-      company: "StartupXYZ",
-      position: "Full-Stack Developer",
-      description: "Developed and maintained multiple client applications. Collaborated with design team to implement pixel-perfect UIs. Built RESTful APIs and managed database architecture.",
+      period: "Aug 2024 - Dec 2024",
+      company: "Mridanga Media",
+      position: "Web Developer & AI Chatbot Developer",
+      description: "Developed customer-service chatbot integrating Voiceflow, Zoho, OpenAI. Created React/Angular web apps and managed client requirements.",
       achievements: [
-        "Built 5+ production applications from scratch",
-        "Increased user engagement by 35% through UX improvements",
-        "Implemented real-time features using WebSocket"
+        "Built intelligent chatbot for automated customer service",
+        "Developed React/Angular web applications",
+        "Managed client requirements and project delivery"
       ],
-      tech: ["Vue.js", "Express", "MongoDB", "Docker"]
+      tech: ["Voiceflow", "Zoho", "OpenAI", "React", "Angular"]
     },
     {
-      period: "2019 - 2020",
-      company: "WebSolutions Ltd.",
-      position: "Frontend Developer",
-      description: "Focused on creating responsive and accessible web interfaces. Worked closely with UX designers to translate designs into interactive experiences.",
+      period: "Oct 2023 - Jul 2024",
+      company: "Mridanga Media",
+      position: "Junior Developer (Internship)",
+      description: "Collaborated on AI chatbot and mobile app features. Gained proficiency in API integrations and troubleshooting.",
       achievements: [
-        "Improved accessibility compliance to WCAG 2.1 AA",
-        "Reduced bundle size by 30% through optimization",
-        "Created reusable component library"
+        "Contributed to AI chatbot development",
+        "Learned API integrations and troubleshooting",
+        "Supported mobile app feature development"
       ],
-      tech: ["React", "SCSS", "WordPress", "jQuery"]
+      tech: ["JavaScript", "API Integration", "Mobile Development"]
+    },
+    {
+      period: "2022 - 2023",
+      company: "Various Clients",
+      position: "Freelance Web Developer",
+      description: "Built and maintained WordPress sites including yofit.in, ayurvedahealthcoach.com, drmteitelbaum.com, astrosarasvat.com.",
+      achievements: [
+        "Delivered 5+ WordPress websites",
+        "Implemented SEO optimization strategies",
+        "Provided ongoing maintenance and support"
+      ],
+      tech: ["WordPress", "SEO", "Google Analytics"]
     }
   ];
 
   const education = [
     {
-      period: "2015 - 2019",
-      institution: "University of Technology",
-      degree: "Bachelor of Computer Science",
-      description: "Specialized in Software Engineering with focus on web technologies and database systems.",
+      period: "2020 - 2024",
+      institution: "Lovely Professional University",
+      degree: "B.Tech in Computer Science & Engineering",
+      description: "Comprehensive program covering software engineering, AI/ML, web technologies, and system design.",
       achievements: [
-        "Graduated Magna Cum Laude (GPA: 3.8/4.0)",
-        "President of Computer Science Society",
-        "Published research on web performance optimization"
+        "Graduated with strong technical foundation",
+        "Specialized in AI and web development",
+        "Completed multiple real-world projects"
+      ]
+    },
+    {
+      period: "2018 - 2020",
+      institution: "Holy Angels Sr Secondary, Ghaziabad",
+      degree: "ISC Senior Secondary",
+      description: "Completed senior secondary education with focus on science and mathematics.",
+      achievements: [
+        "Strong foundation in mathematics and physics",
+        "Developed early interest in computer science",
+        "Participated in technical competitions"
       ]
     }
   ];

@@ -41,18 +41,17 @@ const Hero = () => {
               
               <h1 className="section-title">
                 <span className="block text-2xl md:text-3xl font-normal text-text-subtle mb-2">
-                  Full-Stack Developer &
+                  AI Developer &
                 </span>
                 <span className="gradient-text">
-                  Creative Problem Solver
+                  Technical Consultant
                 </span>
               </h1>
             </div>
 
             <p className="text-lg md:text-xl text-text-subtle max-w-2xl text-balance leading-relaxed">
-              I craft digital experiences that bridge the gap between design and functionality. 
-              Specialized in React, Node.js, and cloud technologies, I turn complex problems 
-              into elegant solutions.
+              Combining AI-driven predictive models with modern web stacks to deliver intelligent, 
+              user-centric solutions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-6">

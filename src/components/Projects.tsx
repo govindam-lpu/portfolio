@@ -31,38 +31,49 @@ const Projects = () => {
   const projects = [
     {
       number: "01",
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution built with React, Node.js, and PostgreSQL. Features include real-time inventory, payment processing, and admin dashboard.",
-      tech: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS"],
+      title: "AI Trade Prediction Model",
+      description: "Real-time data ingestion and predictive analytics for financial markets at One Profit.",
+      tech: ["Python", "scikit-learn", "pandas", "REST APIs"],
       github: "https://github.com",
-      live: "https://example.com",
-      featured: true
+      live: "Private",
+      featured: true,
+      status: "Ongoing"
     },
     {
       number: "02", 
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["Next.js", "TypeScript", "Prisma", "Socket.io"],
+      title: "AI Chatbot Integration",
+      description: "Voiceflow–Zoho–OpenAI chatbot for automated customer service at Mridanga Media.",
+      tech: ["Voiceflow", "Zoho", "OpenAI API"],
       github: "https://github.com",
-      live: "https://example.com",
-      featured: true
+      live: "Private",
+      featured: true,
+      status: "Completed"
     },
     {
       number: "03",
-      title: "Weather Analytics Dashboard",
-      description: "Interactive dashboard displaying weather patterns and climate data with beautiful visualizations and historical analysis.",
-      tech: ["React", "D3.js", "Express", "MongoDB"],
+      title: "Music App",
+      description: "Cross-platform Ionic & Angular music streaming with cloud data sync. Previously live on Google Play.",
+      tech: ["Ionic", "Angular", "Firebase"],
       github: "https://github.com",
-      live: "https://example.com",
+      live: "Discontinued",
       featured: false
     },
     {
       number: "04",
-      title: "Music Streaming App",
-      description: "Spotify-like application with playlist management, audio visualization, and social features for music discovery.",
-      tech: ["Vue.js", "Firebase", "Web Audio API", "Tailwind"],
+      title: "Weather Analytics Dashboard",
+      description: "Interactive React dashboard visualizing climate data with historical analysis.",
+      tech: ["React", "D3.js", "Express", "MongoDB"],
       github: "https://github.com",
-      live: "https://example.com",
+      live: "Coming Soon",
+      featured: false
+    },
+    {
+      number: "05",
+      title: "Ayurveda Health Coach Website",
+      description: "Custom WordPress site for online course delivery, SEO-optimized and self-managed.",
+      tech: ["WordPress", "SEO", "Google Analytics"],
+      github: "https://github.com",
+      live: "https://ayurvedahealthcoach.com",
       featured: false
     }
   ];

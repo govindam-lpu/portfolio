@@ -42,35 +42,36 @@ const About = () => {
           <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
             <div className="space-y-6">
               <p className="text-lg text-text-subtle leading-relaxed">
-                <strong className="text-foreground">Philosophy:</strong> Code is poetry in motion. 
-                Every line should have purpose, every function should tell a story, and every 
-                application should feel like magic to the user.
-              </p>
-              
-              <p className="text-lg text-text-subtle leading-relaxed">
-                With over 5 years of experience in web development, I specialize in creating 
-                scalable applications that don't just work—they inspire. I believe in the power 
-                of clean code, thoughtful design, and continuous learning.
+                I'm an AI Developer & Technical Consultant at One Profit, where I build machine-learning 
+                trade prediction models in Python to guide financial decisions. I've crafted responsive 
+                web apps with React, Angular, and WordPress, and integrated intelligent chatbots using 
+                Voiceflow, Zoho, and OpenAI.
               </p>
 
               <p className="text-lg text-text-subtle leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies, contributing to 
-                open source projects, or experimenting with creative coding and generative art.
+                Outside code, I'm passionate about card magic, guitar performance, photography/videography 
+                (DaVinci Resolve, Lightroom), and travel—hobbies that fuel my creativity and problem-solving 
+                approach.
+              </p>
+              
+              <p className="text-lg text-text-subtle leading-relaxed">
+                When not coding, I perform card magic and mentalism, play guitar, cook vegetarian meals 
+                (no onion/garlic), read novels, write poetry, watch films/TV, and stay active with regular workouts.
               </p>
             </div>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">50+</div>
+                <div className="text-3xl font-bold text-accent">12+</div>
                 <div className="text-sm text-text-subtle mt-1">Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">5+</div>
+                <div className="text-3xl font-bold text-accent">2</div>
                 <div className="text-sm text-text-subtle mt-1">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">15+</div>
+                <div className="text-3xl font-bold text-accent">25+</div>
                 <div className="text-sm text-text-subtle mt-1">Technologies</div>
               </div>
             </div>

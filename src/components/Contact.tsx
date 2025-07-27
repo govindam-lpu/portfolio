@@ -54,19 +54,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "hello@yourname.dev",
-      href: "mailto:hello@yourname.dev"
+      value: "your.email@example.com",
+      href: "mailto:your.email@example.com"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+91 XXXXX XXXXX",
+      href: "tel:+91XXXXXXXXX"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
+      value: "India",
       href: "#"
     }
   ];
@@ -81,11 +81,6 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn", 
       href: "https://linkedin.com/in/yourname"
-    },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com/yourusername"
     }
   ];
 
@@ -98,7 +93,9 @@ const Contact = () => {
           <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
           <h2 className="section-title">Let's Work Together</h2>
           <p className="text-lg text-text-subtle max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss your project and create something amazing together.
+            Ready to build intelligent solutions together? Whether you need AI-driven 
+            applications, modern web development, or technical consultation, I'm here 
+            to help turn your vision into reality.
           </p>
         </div>
 
@@ -214,8 +211,8 @@ const Contact = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold">Currently Available</h4>
                 <p className="text-text-subtle text-sm">
-                  I'm open to freelance projects and full-time opportunities. 
-                  Let's discuss how we can work together to bring your vision to life.
+                  I'm open to AI consulting, web development projects, and technical roles. 
+                  Let's discuss how we can leverage technology to solve your challenges.
                 </p>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>

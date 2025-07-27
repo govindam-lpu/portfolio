@@ -10,28 +10,28 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "Tailwind CSS", level: 92 },
-        { name: "Vue.js", level: 85 }
+        { name: "React", level: 90 },
+        { name: "Angular", level: 85 },
+        { name: "TypeScript", level: 80 },
+        { name: "Tailwind CSS", level: 85 }
       ]
     },
     {
-      title: "Backend",
+      title: "Backend & AI",
       skills: [
-        { name: "Node.js", level: 88 },
-        { name: "Python", level: 82 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 }
+        { name: "Python", level: 90 },
+        { name: "Node.js", level: 85 },
+        { name: "Firebase", level: 80 },
+        { name: "REST APIs", level: 85 }
       ]
     },
     {
-      title: "Tools & DevOps",
+      title: "Tools & Design",
       skills: [
-        { name: "AWS/Azure", level: 78 },
-        { name: "Docker", level: 75 },
-        { name: "Git/GitHub", level: 92 },
-        { name: "CI/CD", level: 70 }
+        { name: "Git/GitHub", level: 90 },
+        { name: "Figma", level: 75 },
+        { name: "Adobe Creative", level: 80 },
+        { name: "DaVinci Resolve", level: 85 }
       ]
     }
   ];
@@ -119,8 +119,8 @@ const Skills = () => {
           <h3 className="text-xl font-semibold mb-6">Other Technologies</h3>
           <div className="flex flex-wrap gap-3">
             {[
-              "GraphQL", "Redis", "Elasticsearch", "Kafka", "Kubernetes", "Terraform",
-              "Jest", "Cypress", "Figma", "Adobe Creative Suite", "Firebase", "Supabase"
+              "WordPress", "Wix", "Shopify", "OpenAI", "scikit-learn", "pandas", 
+              "Voiceflow", "Zoho", "Data Analytics", "Lightroom", "Ionic"
             ].map((tech) => (
               <span 
                 key={tech}
