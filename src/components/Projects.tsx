@@ -69,11 +69,16 @@ const Projects = () => {
     },
     {
       number: "05",
-      title: "Ayurveda Health Coach Website",
-      description: "Custom WordPress site for online course delivery, SEO-optimized and self-managed.",
-      tech: ["WordPress", "SEO", "Google Analytics"],
-      github: "https://github.com",
-      live: "https://ayurvedahealthcoach.com",
+      title: "WordPress Portfolio Collection",
+      description: "Custom WordPress websites with SEO optimization, responsive design, and content management.",
+      tech: ["WordPress", "SEO", "Google Analytics", "Custom Themes"],
+      sites: [
+        { name: "Ayurveda Health Coach", url: "https://ayurvedahealthcoach.com", category: "Health & Wellness" },
+        { name: "YoFit Fitness", url: "https://yofit.in", category: "Fitness & Training" },
+        { name: "Dr. M Teitelbaum", url: "https://drmteitelbaum.com", category: "Medical Practice" },
+        { name: "Astro Sarasvat", url: "https://astrosarasvat.com", category: "Astrology Services" },
+        { name: "The Vedic Life", url: "https://thevediclife.com", category: "Spiritual Wellness" }
+      ],
       featured: false
     }
   ];
@@ -86,8 +91,10 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <span className="section-number">03</span>
-          <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
+          <div className="flex items-center mb-8">
+            <span className="section-number">03</span>
+            <div className="w-16 h-0.5 bg-accent ml-4"></div>
+          </div>
           <h2 className="section-title">Featured Work</h2>
           <p className="text-lg text-text-subtle max-w-2xl">
             A collection of projects that showcase my skills in full-stack development, 
@@ -169,19 +176,47 @@ const Projects = () => {
                   <div className="flex items-center justify-between">
                     <span className="text-accent font-mono text-sm">Project {project.number}</span>
                     <div className="flex gap-2">
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" 
-                         className="text-text-subtle hover:text-accent transition-colors">
-                        <Github className="h-5 w-5" />
-                      </a>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer"
-                         className="text-text-subtle hover:text-accent transition-colors">
-                        <ExternalLink className="h-5 w-5" />
-                      </a>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" 
+                           className="text-text-subtle hover:text-accent transition-colors">
+                          <Github className="h-5 w-5" />
+                        </a>
+                      )}
+                      {project.live && (
+                        <a href={project.live} target="_blank" rel="noopener noreferrer"
+                           className="text-text-subtle hover:text-accent transition-colors">
+                          <ExternalLink className="h-5 w-5" />
+                        </a>
+                      )}
                     </div>
                   </div>
                   
                   <h4 className="text-xl font-semibold">{project.title}</h4>
                   <p className="text-text-subtle">{project.description}</p>
+                  
+                  {/* Special WordPress Sites Grid */}
+                  {project.sites && (
+                    <div className="grid grid-cols-1 gap-3 mt-4">
+                      {project.sites.map((site, index) => (
+                        <div key={site.name} 
+                             className={`group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300 delay-${index * 100}`}>
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-1">
+                              <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
+                                {site.name}
+                              </h5>
+                              <p className="text-xs text-text-subtle">{site.category}</p>
+                            </div>
+                            <a href={site.url} target="_blank" rel="noopener noreferrer"
+                               className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                          <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (

@@ -28,18 +28,19 @@ const About = () => {
   return (
     <section id="about" ref={sectionRef} className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Section Header */}
-          <div className={`space-y-8 transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-            <div>
-              <span className="section-number">02</span>
-              <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
-              <h2 className="section-title">About</h2>
-            </div>
+        {/* Section Header */}
+        <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+          <div className="flex items-center mb-8">
+            <span className="section-number">02</span>
+            <div className="w-16 h-0.5 bg-accent ml-4"></div>
           </div>
+          <h2 className="section-title">About Me</h2>
+        </div>
 
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
-          <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
+
+          <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
             <div className="space-y-6">
               <p className="text-lg text-text-subtle leading-relaxed">
                 I'm an AI Developer & Technical Consultant at One Profit, where I build machine-learning 
@@ -74,6 +75,18 @@ const About = () => {
                 <div className="text-3xl font-bold text-accent">25+</div>
                 <div className="text-sm text-text-subtle mt-1">Technologies</div>
               </div>
+            </div>
+          </div>
+
+          {/* Visual Element */}
+          <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
+            <div className="relative">
+              <div className="aspect-square bg-gradient-warm rounded-2xl border border-border/50 overflow-hidden hover-lift">
+                <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
+                  <div className="text-6xl font-bold text-accent/30">02</div>
+                </div>
+              </div>
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
             </div>
           </div>
         </div>
