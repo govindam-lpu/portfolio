@@ -88,12 +88,13 @@ const Navigation = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="group border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300"
+                className="group relative overflow-hidden border-accent/30 text-accent hover:text-white transition-all duration-300"
                 asChild
               >
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
-                  Resume
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
+                  <div className="absolute inset-0 bg-foreground transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce relative z-10" />
+                  <span className="relative z-10">Resume</span>
                 </a>
               </Button>
               

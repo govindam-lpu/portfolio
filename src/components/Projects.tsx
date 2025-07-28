@@ -202,25 +202,26 @@ const Projects = () => {
                   
                   {/* Special WordPress Sites Grid */}
                   {project.sites && (
-                    <div className="grid grid-cols-1 gap-3 mt-4">
-                      {project.sites.map((site, index) => (
-                        <div key={site.name} 
-                             className={`group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300 delay-${index * 100}`}>
-                          <div className="flex items-center justify-between">
-                            <div className="space-y-1">
-                              <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
-                                {site.name}
-                              </h5>
-                              <p className="text-xs text-text-subtle">{site.category}</p>
-                            </div>
-                            <a href={site.url} target="_blank" rel="noopener noreferrer"
-                               className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all">
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          </div>
-                          <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                        </div>
-                      ))}
+                     <div className="grid grid-cols-1 gap-3 mt-4">
+                       {project.sites.map((site, index) => (
+                         <div key={site.name} 
+                              className="individual-site-card group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300"
+                              style={{ animationDelay: `${index * 100}ms` }}>
+                           <div className="flex items-center justify-between">
+                             <div className="space-y-1">
+                               <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
+                                 {site.name}
+                               </h5>
+                               <p className="text-xs text-text-subtle">{site.category}</p>
+                             </div>
+                             <a href={site.url} target="_blank" rel="noopener noreferrer"
+                                className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all">
+                               <ExternalLink className="h-4 w-4" />
+                             </a>
+                           </div>
+                           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                         </div>
+                       ))}
                     </div>
                   )}
                   
