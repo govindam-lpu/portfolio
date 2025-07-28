@@ -40,7 +40,7 @@ const Hero = () => {
               </div>
               
               <h1 className="section-title">
-                <span className="block text-2xl md:text-3xl font-normal text-text-subtle mb-2">
+                <span className="block text-2xl md:text-3xl font-normal text-foreground mb-2">
                   AI Developer &
                 </span>
                 <span className="gradient-text">

@@ -170,8 +170,14 @@ const Projects = () => {
         <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <h3 className="text-2xl font-bold mb-8">Other Notable Projects</h3>
           <div className="grid md:grid-cols-2 gap-8">
-            {otherProjects.map((project) => (
-              <Card key={project.number} className="p-6 hover-lift border-border">
+            {otherProjects.slice(0, 2).map((project, index) => (
+              <Card 
+                key={project.number} 
+                className="p-6 hover-lift border-border transition-all duration-500 hover:shadow-lg hover:border-accent/30 group"
+                style={{
+                  animation: `fadeInUp 0.6s ease-out ${(index + 1) * 0.2}s both`
+                }}
+              >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <span className="text-accent font-mono text-sm">Project {project.number}</span>
@@ -232,6 +238,82 @@ const Projects = () => {
               </Card>
             ))}
           </div>
+          
+          {/* WordPress Portfolio - Full Width */}
+          {otherProjects.slice(2).map((project, index) => (
+            <Card 
+              key={project.number} 
+              className="p-8 hover-lift border-border transition-all duration-500 hover:shadow-lg hover:border-accent/30 group mt-8"
+              style={{
+                animation: `fadeInUp 0.6s ease-out ${0.6}s both`
+              }}
+            >
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <span className="text-accent font-mono text-sm">Project {project.number}</span>
+                  <div className="flex gap-2">
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" 
+                         className="text-text-subtle hover:text-accent transition-colors">
+                        <Github className="h-5 w-5" />
+                      </a>
+                    )}
+                    {project.live && (
+                      <a href={project.live} target="_blank" rel="noopener noreferrer"
+                         className="text-text-subtle hover:text-accent transition-colors">
+                        <ExternalLink className="h-5 w-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <h4 className="text-2xl font-semibold">{project.title}</h4>
+                    <p className="text-text-subtle text-lg">{project.description}</p>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {project.tech.map((tech) => (
+                        <span 
+                          key={tech}
+                          className="px-3 py-1 bg-surface text-sm font-medium rounded-md border border-border"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* WordPress Sites Grid */}
+                  {project.sites && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      {project.sites.map((site, siteIndex) => (
+                        <div key={site.name} 
+                             className={`group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-md`}
+                             style={{
+                               animation: `slideInRight 0.4s ease-out ${siteIndex * 0.1}s both`
+                             }}>
+                          <div className="flex items-center justify-between">
+                            <div className="space-y-2">
+                              <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
+                                {site.name}
+                              </h5>
+                              <p className="text-xs text-text-subtle">{site.category}</p>
+                            </div>
+                            <a href={site.url} target="_blank" rel="noopener noreferrer"
+                               className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all transform group-hover:scale-110">
+                              <ExternalLink className="h-4 w-4" />
+                            </a>
+                          </div>
+                          <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </Card>
+          ))}
         </div>
       </div>
     </section>

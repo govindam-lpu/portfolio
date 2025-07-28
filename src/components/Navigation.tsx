@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { theme, setTheme } = useTheme();
 
   const navItems = [
     { name: 'About', href: '#about' },
@@ -81,6 +83,32 @@ const Navigation = () => {
                   )}
                 </button>
               ))}
+              
+              {/* Resume Button */}
+              <Button 
+                variant="outline" 
+                size="sm" 
+                className="group border-accent/30 text-accent hover:bg-accent hover:text-background transition-all duration-300"
+                asChild
+              >
+                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="h-4 w-4 mr-2 group-hover:animate-bounce" />
+                  Resume
+                </a>
+              </Button>
+              
+              {/* Theme Toggle */}
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="group relative overflow-hidden p-2 hover:bg-accent/10"
+              >
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
+                <span className="sr-only">Toggle theme</span>
+              </Button>
+              
               <Button variant="accent" size="sm" onClick={() => scrollToSection('#contact')}>
                 Hire Me
               </Button>
@@ -110,18 +138,44 @@ const Navigation = () => {
                 >
                   {item.name}
                 </button>
-              ))}
-              <Button 
-                variant="accent" 
-                size="sm" 
-                className="w-full mt-4"
-                onClick={() => scrollToSection('#contact')}
-              >
-                Hire Me
-              </Button>
+                ))}
+                
+                {/* Mobile Resume Button */}
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full justify-center border-accent/30 text-accent hover:bg-accent hover:text-background"
+                  asChild
+                >
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <Download className="h-4 w-4 mr-2" />
+                    Resume
+                  </a>
+                </Button>
+                
+                {/* Mobile Theme Toggle */}
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                  className="w-full justify-center hover:bg-accent/10"
+                >
+                  <Sun className="h-4 w-4 mr-2 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-4 w-4 mr-2 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
+                  Toggle Theme
+                </Button>
+                
+                <Button 
+                  variant="accent" 
+                  size="sm" 
+                  className="w-full mt-4"
+                  onClick={() => scrollToSection('#contact')}
+                >
+                  Hire Me
+                </Button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </nav>
 
       {/* Section Indicators */}

@@ -64,7 +64,7 @@ const Experience = () => {
       tech: ["JavaScript", "API Integration", "Mobile Development"]
     },
     {
-      period: "2022 - 2023",
+      period: "Ongoing",
       company: "Various Clients",
       position: "Freelance Web Developer",
       description: "Built and maintained WordPress sites including yofit.in, ayurvedahealthcoach.com, drmteitelbaum.com, astrosarasvat.com.",
