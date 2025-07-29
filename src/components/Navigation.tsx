@@ -88,7 +88,7 @@ const Navigation = () => {
               <Button 
                 variant="outline" 
                 size="sm" 
-                className="group relative overflow-hidden border-accent/30 text-accent hover:text-white transition-all duration-300"
+                className="group relative overflow-hidden border-accent/30 text-accent hover:text-background transition-all duration-300"
                 asChild
               >
                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
@@ -103,10 +103,11 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="group relative overflow-hidden p-2 hover:bg-accent/10"
+                className="group relative overflow-hidden p-2 hover:bg-accent/10 rounded-full"
               >
-                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
-                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
+                <div className="absolute inset-0 bg-accent/10 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
+                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 relative z-10" />
+                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100 inset-0 m-auto relative z-10" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
               

@@ -87,7 +87,7 @@ const Projects = () => {
   const otherProjects = projects.filter(p => !p.featured);
 
   return (
-    <section id="projects" ref={sectionRef} className="py-24 px-6 bg-surface">
+    <section id="projects" ref={sectionRef} className="py-16 md:py-24 px-4 md:px-6 bg-surface">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
@@ -103,7 +103,7 @@ const Projects = () => {
         </div>
 
         {/* Featured Projects */}
-        <div className="space-y-24 mb-16">
+        <div className="space-y-16 md:space-y-24 mb-12 md:mb-16">
           {featuredProjects.map((project, index) => (
             <div 
               key={project.number}
@@ -111,7 +111,7 @@ const Projects = () => {
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
               }`}
             >
-              <div className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
+              <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
                 {/* Project Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <Card className="aspect-video bg-gradient-warm border-none hover-lift overflow-hidden">
@@ -169,7 +169,7 @@ const Projects = () => {
         {/* Other Projects Grid */}
         <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <h3 className="text-2xl font-bold mb-8">Other Notable Projects</h3>
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {otherProjects.slice(0, 2).map((project, index) => (
               <Card 
                 key={project.number} 
@@ -204,23 +204,25 @@ const Projects = () => {
                   {project.sites && (
                      <div className="grid grid-cols-1 gap-3 mt-4">
                        {project.sites.map((site, index) => (
-                         <div key={site.name} 
-                              className="individual-site-card group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300"
-                              style={{ animationDelay: `${index * 100}ms` }}>
+                         <a key={site.name} 
+                            href={site.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="individual-site-card group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 block"
+                            style={{ animationDelay: `${index * 100}ms` }}>
                            <div className="flex items-center justify-between">
                              <div className="space-y-1">
                                <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
                                  {site.name}
                                </h5>
-                               <p className="text-xs text-text-subtle">{site.category}</p>
+                               <p className="text-xs text-text-subtle group-hover:text-muted-foreground transition-colors">{site.category}</p>
                              </div>
-                             <a href={site.url} target="_blank" rel="noopener noreferrer"
-                                className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all">
+                             <div className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all">
                                <ExternalLink className="h-4 w-4" />
-                             </a>
+                             </div>
                            </div>
                            <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                         </div>
+                         </a>
                        ))}
                     </div>
                   )}
@@ -285,32 +287,34 @@ const Projects = () => {
                     </div>
                   </div>
                   
-                  {/* WordPress Sites Grid */}
-                  {project.sites && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {project.sites.map((site, siteIndex) => (
-                        <div key={site.name} 
-                             className={`group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-md`}
-                             style={{
-                               animation: `slideInRight 0.4s ease-out ${siteIndex * 0.1}s both`
-                             }}>
-                          <div className="flex items-center justify-between">
-                            <div className="space-y-2">
-                              <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
-                                {site.name}
-                              </h5>
-                              <p className="text-xs text-text-subtle">{site.category}</p>
-                            </div>
-                            <a href={site.url} target="_blank" rel="noopener noreferrer"
-                               className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all transform group-hover:scale-110">
-                              <ExternalLink className="h-4 w-4" />
-                            </a>
-                          </div>
-                          <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                   {/* WordPress Sites Grid */}
+                   {project.sites && (
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                       {project.sites.map((site, siteIndex) => (
+                         <a key={site.name} 
+                            href={site.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 hover:shadow-md block"
+                            style={{
+                              animation: `slideInRight 0.4s ease-out ${siteIndex * 0.1}s both`
+                            }}>
+                           <div className="flex items-center justify-between">
+                             <div className="space-y-2">
+                               <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
+                                 {site.name}
+                               </h5>
+                               <p className="text-xs text-text-subtle group-hover:text-muted-foreground transition-colors">{site.category}</p>
+                             </div>
+                             <div className="opacity-60 group-hover:opacity-100 group-hover:text-accent transition-all transform group-hover:scale-110">
+                               <ExternalLink className="h-4 w-4" />
+                             </div>
+                           </div>
+                           <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-accent/0 via-accent/50 to-accent/0 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                         </a>
+                       ))}
+                     </div>
+                   )}
                 </div>
               </div>
             </Card>
