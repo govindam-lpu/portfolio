@@ -147,18 +147,48 @@ const Projects = () => {
                   </div>
 
                   <div className="flex gap-4 pt-2">
-                    <Button variant="accent" size="sm" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
-                    <Button variant="minimal" size="sm" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Source Code
-                      </a>
-                    </Button>
+                    {project.status && (
+                      <div className="flex items-center gap-2">
+                        <div className={`w-3 h-3 rounded-full ${
+                          project.status === 'Ongoing' ? 'bg-green-500' : 'bg-blue-500'
+                        }`}></div>
+                        <span className="text-sm font-medium text-text-subtle">
+                          {project.status}
+                        </span>
+                      </div>
+                    )}
+                    {project.number === "03" && (
+                      <>
+                        <Button variant="accent" size="sm" asChild>
+                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                        <Button variant="minimal" size="sm" asChild>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 mr-2" />
+                            Source Code
+                          </a>
+                        </Button>
+                      </>
+                    )}
+                    {project.number === "04" && (
+                      <>
+                        <Button variant="accent" size="sm" asChild>
+                          <a href={project.live} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4 mr-2" />
+                            Live Demo
+                          </a>
+                        </Button>
+                        <Button variant="minimal" size="sm" asChild>
+                          <a href={project.github} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4 mr-2" />
+                            Source Code
+                          </a>
+                        </Button>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>

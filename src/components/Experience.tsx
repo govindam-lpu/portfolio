@@ -107,8 +107,10 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <span className="section-number">05</span>
-          <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
+          <div className="flex items-center mb-8">
+            <span className="section-number">05</span>
+            <div className="w-16 h-0.5 bg-accent ml-4"></div>
+          </div>
           <h2 className="section-title">Experience & Education</h2>
         </div>
 

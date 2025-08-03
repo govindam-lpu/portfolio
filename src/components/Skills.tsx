@@ -73,8 +73,10 @@ const Skills = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <span className="section-number">04</span>
-          <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
+          <div className="flex items-center mb-8">
+            <span className="section-number">04</span>
+            <div className="w-16 h-0.5 bg-accent ml-4"></div>
+          </div>
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="text-lg text-text-subtle max-w-2xl">
             A comprehensive overview of my technical expertise and proficiency levels.
@@ -96,17 +98,58 @@ const Skills = () => {
               
               <div className="space-y-6">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-text-subtle">
-                        {progressValues[skill.name] || 0}%
-                      </span>
+                  <div key={skill.name} className="group">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="font-medium text-lg">{skill.name}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-sm text-text-subtle font-mono">
+                          {skill.level}%
+                        </span>
+                      </div>
                     </div>
-                    <Progress 
-                      value={progressValues[skill.name] || 0} 
-                      className="h-2 bg-surface-elevated"
-                    />
+                    
+                    {/* Skill Level Visualization */}
+                    <div className="relative">
+                      <div className="flex items-center gap-1">
+                        {[...Array(5)].map((_, index) => {
+                          const threshold = (index + 1) * 20;
+                          const isActive = skill.level >= threshold;
+                          const isPartial = skill.level > (threshold - 20) && skill.level < threshold;
+                          
+                          return (
+                            <div
+                              key={index}
+                              className={`h-3 flex-1 rounded-sm transition-all duration-500 delay-${index * 100} ${
+                                isActive 
+                                  ? 'bg-accent shadow-sm' 
+                                  : isPartial 
+                                    ? 'bg-accent/50' 
+                                    : 'bg-surface-elevated border border-border'
+                              }`}
+                              style={{
+                                animationDelay: `${index * 100}ms`
+                              }}
+                            />
+                          );
+                        })}
+                      </div>
+                      
+                      {/* Skill Level Labels */}
+                      <div className="flex justify-between mt-2 text-xs text-text-subtle">
+                        <span>Beginner</span>
+                        <span>Expert</span>
+                      </div>
+                    </div>
+
+                    {/* Hover Effect - Additional Info */}
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-2">
+                      <div className="text-xs text-text-subtle">
+                        {skill.level >= 90 && "Expert level - Can architect and lead projects"}
+                        {skill.level >= 80 && skill.level < 90 && "Advanced - Strong production experience"}
+                        {skill.level >= 70 && skill.level < 80 && "Intermediate - Comfortable with most tasks"}
+                        {skill.level < 70 && "Learning - Basic understanding and growing"}
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>

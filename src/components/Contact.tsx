@@ -89,8 +89,10 @@ const Contact = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <span className="section-number">06</span>
-          <div className="w-16 h-0.5 bg-accent inline-block ml-4 mb-8"></div>
+          <div className="flex items-center justify-center mb-8">
+            <span className="section-number">07</span>
+            <div className="w-16 h-0.5 bg-accent ml-4"></div>
+          </div>
           <h2 className="section-title">Let's Work Together</h2>
           <p className="text-lg text-text-subtle max-w-2xl mx-auto">
             Ready to build intelligent solutions together? Whether you need AI-driven 
