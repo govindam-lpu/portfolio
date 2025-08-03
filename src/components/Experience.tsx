@@ -114,10 +114,10 @@ const Experience = () => {
           <h2 className="section-title">Experience & Education</h2>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Experience */}
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold mb-8">Professional Experience</h3>
+          <div className="lg:col-span-2 order-2 lg:order-1">
+            <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">Professional Experience</h3>
             <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <div 
@@ -126,23 +126,23 @@ const Experience = () => {
                     isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                   }`}
                 >
-                  <Card className="p-6 hover-lift border-border">
-                    <div className="space-y-4">
-                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                  <Card className="p-4 md:p-6 hover-lift border-border">
+                    <div className="space-y-3 md:space-y-4">
+                      <div className="flex flex-col gap-2">
                         <div>
-                          <h4 className="text-xl font-semibold">{exp.position}</h4>
-                          <p className="text-accent font-medium">{exp.company}</p>
+                          <h4 className="text-lg md:text-xl font-semibold">{exp.position}</h4>
+                          <p className="text-accent font-medium text-sm md:text-base">{exp.company}</p>
                         </div>
-                        <span className="text-sm text-text-subtle font-mono">{exp.period}</span>
+                        <span className="text-xs md:text-sm text-text-subtle font-mono">{exp.period}</span>
                       </div>
 
-                      <p className="text-text-subtle leading-relaxed">{exp.description}</p>
+                      <p className="text-text-subtle leading-relaxed text-sm md:text-base">{exp.description}</p>
 
                       <div className="space-y-2">
-                        <h5 className="font-medium text-sm">Key Achievements:</h5>
+                        <h5 className="font-medium text-xs md:text-sm">Key Achievements:</h5>
                         <ul className="space-y-1">
                           {exp.achievements.map((achievement, i) => (
-                            <li key={i} className="text-text-subtle text-sm flex items-start gap-2">
+                            <li key={i} className="text-text-subtle text-xs md:text-sm flex items-start gap-2">
                               <span className="text-accent mt-1">•</span>
                               {achievement}
                             </li>
@@ -150,7 +150,7 @@ const Experience = () => {
                         </ul>
                       </div>
 
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
                         {exp.tech.map((tech) => (
                           <span 
                             key={tech}
@@ -168,19 +168,19 @@ const Experience = () => {
           </div>
 
           {/* Education & Certifications */}
-          <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
-            <h3 className="text-2xl font-bold mb-8">Education</h3>
-            <div className="space-y-6">
+          <div className={`order-1 lg:order-2 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 lg:translate-x-0 opacity-100' : 'translate-y-12 lg:translate-y-0 lg:translate-x-12 opacity-0'}`}>
+            <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">Education</h3>
+            <div className="space-y-4 md:space-y-6">
               {education.map((edu, index) => (
-                <Card key={index} className="p-6 border-border">
-                  <div className="space-y-4">
+                <Card key={index} className="p-4 md:p-6 border-border">
+                  <div className="space-y-3 md:space-y-4">
                     <div>
-                      <h4 className="font-semibold">{edu.degree}</h4>
-                      <p className="text-accent text-sm">{edu.institution}</p>
+                      <h4 className="font-semibold text-sm md:text-base">{edu.degree}</h4>
+                      <p className="text-accent text-xs md:text-sm">{edu.institution}</p>
                       <span className="text-xs text-text-subtle font-mono">{edu.period}</span>
                     </div>
 
-                    <p className="text-text-subtle text-sm leading-relaxed">{edu.description}</p>
+                    <p className="text-text-subtle text-xs md:text-sm leading-relaxed">{edu.description}</p>
 
                     <div className="space-y-2">
                       <h5 className="font-medium text-xs">Highlights:</h5>
@@ -198,15 +198,15 @@ const Experience = () => {
               ))}
 
               {/* Certifications */}
-              <div className="space-y-4">
-                <h4 className="font-semibold">Certifications</h4>
+              <div className="space-y-3 md:space-y-4">
+                <h4 className="font-semibold text-sm md:text-base">Certifications</h4>
                 <div className="space-y-2">
                   {[
                     "AWS Certified Solutions Architect",
                     "Google Cloud Professional Developer", 
                     "MongoDB Certified Developer"
                   ].map((cert) => (
-                    <div key={cert} className="text-sm text-text-subtle flex items-start gap-2">
+                    <div key={cert} className="text-xs md:text-sm text-text-subtle flex items-start gap-2">
                       <span className="text-accent mt-1">•</span>
                       {cert}
                     </div>
