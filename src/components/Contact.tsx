@@ -54,8 +54,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "your.email@example.com",
-      href: "mailto:your.email@example.com"
+      value: "govindamvats.32@gmail.com",
+      href: "mailto:govindamvats.32@gmail.com"
     },
     {
       icon: Phone,
@@ -75,12 +75,12 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/yourusername"
+      href: "https://github.com/govindam-lpu"
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      href: "https://linkedin.com/in/yourname"
+      href: "https://www.linkedin.com/in/govindam-vats/"
     }
   ];
 

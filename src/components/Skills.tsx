@@ -9,37 +9,37 @@ const Skills = () => {
     {
       title: "Frontend Development",
       icon: "💻",
-      color: "bg-blue-500/10 border-blue-500/20",
+      color: "bg-primary/10 border-primary/20",
       skills: ["React", "Angular", "TypeScript", "Tailwind CSS", "HTML5", "CSS3"]
     },
     {
       title: "Backend & AI",
       icon: "🤖",
-      color: "bg-purple-500/10 border-purple-500/20",
+      color: "bg-accent/10 border-accent/20",
       skills: ["Python", "Node.js", "Firebase", "REST APIs", "Machine Learning", "scikit-learn"]
     },
     {
       title: "Tools & Design",
       icon: "🎨",
-      color: "bg-green-500/10 border-green-500/20",
+      color: "bg-muted/50 border-border",
       skills: ["Git/GitHub", "Figma", "Adobe Creative", "DaVinci Resolve", "WordPress", "SEO"]
     },
     {
       title: "Database & Cloud",
       icon: "☁️",
-      color: "bg-orange-500/10 border-orange-500/20",
+      color: "bg-primary/5 border-primary/10",
       skills: ["MongoDB", "MySQL", "AWS", "Google Cloud", "Supabase", "Vercel"]
     },
     {
       title: "Mobile & Frameworks",
       icon: "📱",
-      color: "bg-pink-500/10 border-pink-500/20",
+      color: "bg-accent/5 border-accent/10",
       skills: ["React Native", "Ionic", "Next.js", "Vite", "Express.js", "FastAPI"]
     },
     {
       title: "Analytics & APIs",
       icon: "📊",
-      color: "bg-cyan-500/10 border-cyan-500/20",
+      color: "bg-muted/30 border-border/50",
       skills: ["Google Analytics", "Pandas", "Data Analytics", "OpenAI", "Voiceflow", "Zoho"]
     }
   ];

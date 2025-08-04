@@ -11,12 +11,12 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     const cardInterval = setInterval(() => {
       setCurrentCard((prev) => (prev + 1) % 4);
-    }, 300);
+    }, 500);
 
     const exitTimer = setTimeout(() => {
       setIsExiting(true);
       setTimeout(onComplete, 800);
-    }, 2500);
+    }, 3000);
 
     return () => {
       clearInterval(cardInterval);

@@ -107,18 +107,18 @@ const Experience = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <div className="flex items-center mb-8">
+          <div className="flex items-center justify-center md:justify-start mb-8">
             <span className="section-number">05</span>
             <div className="w-16 h-0.5 bg-accent ml-4"></div>
           </div>
           <h2 className="section-title">Experience & Education</h2>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
           {/* Experience */}
           <div className="lg:col-span-2 order-2 lg:order-1">
-            <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">Professional Experience</h3>
-            <div className="space-y-8">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">Professional Experience</h3>
+            <div className="space-y-4 sm:space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (
                 <div 
                   key={index}
@@ -126,7 +126,7 @@ const Experience = () => {
                     isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                   }`}
                 >
-                  <Card className="p-4 md:p-6 hover-lift border-border">
+                  <Card className="p-3 sm:p-4 md:p-6 hover-lift border-border">
                     <div className="space-y-3 md:space-y-4">
                       <div className="flex flex-col gap-2">
                         <div>
@@ -169,10 +169,10 @@ const Experience = () => {
 
           {/* Education & Certifications */}
           <div className={`order-1 lg:order-2 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 lg:translate-x-0 opacity-100' : 'translate-y-12 lg:translate-y-0 lg:translate-x-12 opacity-0'}`}>
-            <h3 className="text-xl md:text-2xl font-bold mb-6 md:mb-8">Education</h3>
-            <div className="space-y-4 md:space-y-6">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">Education</h3>
+            <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {education.map((edu, index) => (
-                <Card key={index} className="p-4 md:p-6 border-border">
+                <Card key={index} className="p-3 sm:p-4 md:p-6 border-border">
                   <div className="space-y-3 md:space-y-4">
                     <div>
                       <h4 className="font-semibold text-sm md:text-base">{edu.degree}</h4>

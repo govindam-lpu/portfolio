@@ -34,7 +34,7 @@ const Projects = () => {
       title: "AI Trade Prediction Model",
       description: "Real-time data ingestion and predictive analytics for financial markets at One Profit.",
       tech: ["Python", "scikit-learn", "pandas", "REST APIs"],
-      github: "https://github.com",
+      github: "https://github.com/govindam-lpu",
       live: "Private",
       featured: true,
       status: "Ongoing"
@@ -44,7 +44,7 @@ const Projects = () => {
       title: "AI Chatbot Integration",
       description: "Voiceflow–Zoho–OpenAI chatbot for automated customer service at Mridanga Media.",
       tech: ["Voiceflow", "Zoho", "OpenAI API"],
-      github: "https://github.com",
+      github: "https://github.com/govindam-lpu",
       live: "Private",
       featured: true,
       status: "Completed"
@@ -54,7 +54,7 @@ const Projects = () => {
       title: "Music App",
       description: "Cross-platform Ionic & Angular music streaming with cloud data sync. Previously live on Google Play.",
       tech: ["Ionic", "Angular", "Firebase"],
-      github: "https://github.com",
+      github: "https://github.com/govindam-lpu",
       live: "Discontinued",
       featured: false
     },
@@ -63,7 +63,7 @@ const Projects = () => {
       title: "Weather Analytics Dashboard",
       description: "Interactive React dashboard visualizing climate data with historical analysis.",
       tech: ["React", "D3.js", "Express", "MongoDB"],
-      github: "https://github.com",
+      github: "https://github.com/govindam-lpu",
       live: "Coming Soon",
       featured: false
     },

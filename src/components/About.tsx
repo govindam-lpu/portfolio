@@ -56,8 +56,8 @@ const About = () => {
               </p>
               
               <p className="text-lg text-text-subtle leading-relaxed">
-                When not coding, I perform card magic and mentalism, play guitar, cook vegetarian meals 
-                (no onion/garlic), read novels, write poetry, watch films/TV, and stay active with regular workouts.
+                When not coding, I perform card magic and mentalism, play guitar, cook vegetarian meals, 
+                read novels, write poetry, watch films/TV, and stay active with regular workouts.
               </p>
             </div>
 

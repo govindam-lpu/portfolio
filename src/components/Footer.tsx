@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/yourusername", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com/in/yourname", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:hello@yourname.dev", label: "Email" }
+    { icon: Github, href: "https://github.com/govindam-lpu", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/govindam-vats/", label: "LinkedIn" },
+    { icon: Mail, href: "mailto:govindamvats.32@gmail.com", label: "Email" }
   ];
 
   return (
@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold mb-2">yourname.dev</h3>
+            <h3 className="text-xl font-bold mb-2">Govindam Vats</h3>
             <p className="text-text-subtle text-sm flex items-center gap-1 justify-center md:justify-start">
               © {currentYear} Built with 
               <Heart className="h-4 w-4 text-accent fill-current" />
@@ -45,7 +45,7 @@ const Footer = () => {
           <p className="text-text-subtle text-xs">
             This website is open source and available on{' '}
             <a 
-              href="https://github.com/yourusername/portfolio" 
+              href="https://github.com/govindam-lpu/portfolio" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-accent hover:underline"
