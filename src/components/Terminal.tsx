@@ -64,13 +64,13 @@ const Terminal = () => {
           {displayText.map((line, index) => (
             <div key={index} className="mb-2">
               <span className={`
-                ${line.startsWith('$') ? 'text-green-400' : 
-                  line.includes('govindam-vats') || line.includes('Gova') || line.includes('Govindam') ? 'text-blue-400' :
-                  line.includes('machine-learning') || line.includes('web-development') || line.includes('consulting') ? 'text-yellow-400' :
-                  line.includes('Let\'s build') ? 'text-purple-400' :
+                ${line && line.startsWith('$') ? 'text-green-400' : 
+                  line && (line.includes('govindam-vats') || line.includes('Gova') || line.includes('Govindam')) ? 'text-blue-400' :
+                  line && (line.includes('machine-learning') || line.includes('web-development') || line.includes('consulting')) ? 'text-yellow-400' :
+                  line && line.includes('Let\'s build') ? 'text-purple-400' :
                   'text-gray-300'}
               `}>
-                {line}
+                {line || ''}
                 {index === currentLine && currentChar <= lines[currentLine]?.length && (
                   <span className="animate-pulse text-green-400">|</span>
                 )}
