@@ -108,7 +108,7 @@ const Experience = () => {
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <div className="flex items-center justify-center md:justify-start mb-8">
-            <span className="section-number">05</span>
+            <span className="section-number">06</span>
             <div className="w-16 h-0.5 bg-accent ml-4"></div>
           </div>
           <h2 className="section-title">Experience & Education</h2>

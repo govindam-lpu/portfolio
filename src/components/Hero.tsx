@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import logo from '@/assets/logo.png';
+import { ArrowDown, Github, Linkedin, Mail, Instagram } from 'lucide-react';
+import Terminal from './Terminal';
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,16 +18,9 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        {/* Logo & Visual Identity */}
+        {/* Terminal */}
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
-          <div className="relative">
-            <img 
-              src={logo} 
-              alt="Developer Logo" 
-              className="w-80 h-80 mx-auto lg:mx-0 object-contain"
-            />
-            <div className="absolute inset-0 bg-gradient-warm opacity-20 rounded-full blur-3xl"></div>
-          </div>
+          <Terminal />
         </div>
 
         {/* Hero Content */}
@@ -81,6 +74,9 @@ const Hero = () => {
               </a>
               <a href="https://www.linkedin.com/in/govindam-vats/" className="text-text-subtle hover:text-accent transition-colors duration-300">
                 <Linkedin className="h-6 w-6" />
+              </a>
+              <a href="https://www.instagram.com/govind_umm" className="text-text-subtle hover:text-accent transition-colors duration-300">
+                <Instagram className="h-6 w-6" />
               </a>
               <a href="mailto:govindamvats.32@gmail.com" className="text-text-subtle hover:text-accent transition-colors duration-300">
                 <Mail className="h-6 w-6" />

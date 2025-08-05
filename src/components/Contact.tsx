@@ -4,7 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Mail, MapPin, Phone, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, MapPin, Phone, Github, Linkedin, Instagram } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Contact = () => {
@@ -60,13 +60,13 @@ const Contact = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+91 XXXXX XXXXX",
-      href: "tel:+91XXXXXXXXX"
+      value: "+91 8800664912",
+      href: "tel:+918800664912"
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "India",
+      value: "Delhi, India",
       href: "#"
     }
   ];
@@ -81,6 +81,11 @@ const Contact = () => {
       icon: Linkedin,
       label: "LinkedIn", 
       href: "https://www.linkedin.com/in/govindam-vats/"
+    },
+    {
+      icon: Instagram,
+      label: "Instagram", 
+      href: "https://www.instagram.com/govind_umm"
     }
   ];
 
@@ -90,7 +95,7 @@ const Contact = () => {
         {/* Section Header */}
         <div className={`mb-16 text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
           <div className="flex items-center justify-center mb-8">
-            <span className="section-number">07</span>
+            <span className="section-number">08</span>
             <div className="w-16 h-0.5 bg-accent ml-4"></div>
           </div>
           <h2 className="section-title">Let's Work Together</h2>
