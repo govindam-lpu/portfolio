@@ -1,49 +1,65 @@
 import { useState, useEffect } from 'react';
 
 const Terminal = () => {
+  const [displayText, setDisplayText] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState(0);
   const [currentChar, setCurrentChar] = useState(0);
-  const [displayText, setDisplayText] = useState<string[]>([]);
+  const [isComplete, setIsComplete] = useState(false);
 
   const lines = [
     "$ whoami",
     "govindam-vats",
-    "$ cat introduction.txt",
-    "Hi! I'm Govindam Vats",
-    "You can call me Gova 👋",
-    "Welcome to my digital space",
+    "",
+    "$ cat about.txt",
+    "Hi! I'm Govindam Vats 👋",
+    "You can call me Gova",
+    "Welcome to my digital space!",
+    "",
+    "$ echo $ROLE",
     "AI Developer & Technical Consultant",
+    "",
     "$ ls skills/",
-    "machine-learning/ web-development/ consulting/",
-    "$ echo 'Let\\'s build something amazing together!'",
-    "Let's build something amazing together!",
+    "machine-learning/  web-development/  consulting/",
+    "",
+    "$ fortune",
+    "\"Innovation distinguishes between a leader and a follower.\"",
+    "",
+    "$ echo 'Ready to build something amazing together!'",
+    "Ready to build something amazing together!",
+    "",
     "$ _"
   ];
 
   useEffect(() => {
-    if (currentLine < lines.length) {
-      const line = lines[currentLine];
-      
-      if (currentChar <= line.length) {
-        const timer = setTimeout(() => {
-          const newDisplayText = [...displayText];
-          newDisplayText[currentLine] = line.substring(0, currentChar);
-          setDisplayText(newDisplayText);
-          
-          if (currentChar === line.length) {
-            setTimeout(() => {
-              setCurrentLine(prev => prev + 1);
-              setCurrentChar(0);
-            }, 800);
-          } else {
-            setCurrentChar(prev => prev + 1);
-          }
-        }, 50);
-
-        return () => clearTimeout(timer);
-      }
+    if (currentLine >= lines.length) {
+      setIsComplete(true);
+      return;
     }
-  }, [currentLine, currentChar, displayText, lines]);
+
+    const currentLineText = lines[currentLine];
+    
+    if (currentChar <= currentLineText.length) {
+      const timer = setTimeout(() => {
+        setDisplayText(prev => {
+          const newDisplay = [...prev];
+          newDisplay[currentLine] = currentLineText.substring(0, currentChar);
+          return newDisplay;
+        });
+        
+        if (currentChar === currentLineText.length) {
+          // Line complete, move to next line after delay
+          setTimeout(() => {
+            setCurrentLine(prev => prev + 1);
+            setCurrentChar(0);
+          }, currentLineText.startsWith('$') ? 1000 : 500);
+        } else {
+          setCurrentChar(prev => prev + 1);
+        }
+      }, currentLineText === "" ? 100 : Math.random() * 50 + 30);
+
+      return () => clearTimeout(timer);
+    }
+  }, [currentLine, currentChar, lines]);
 
   return (
     <div className="w-full max-w-lg mx-auto lg:mx-0">
@@ -62,21 +78,30 @@ const Terminal = () => {
         {/* Terminal Content */}
         <div className="p-4 font-mono text-sm bg-gray-900 min-h-[400px]">
           {displayText.map((line, index) => (
-            <div key={index} className="mb-2">
+            <div key={index} className="mb-1 leading-relaxed">
               <span className={`
-                ${line && line.startsWith('$') ? 'text-green-400' : 
-                  line && (line.includes('govindam-vats') || line.includes('Gova') || line.includes('Govindam')) ? 'text-blue-400' :
-                  line && (line.includes('machine-learning') || line.includes('web-development') || line.includes('consulting')) ? 'text-yellow-400' :
-                  line && line.includes('Let\'s build') ? 'text-purple-400' :
+                ${line?.startsWith('$') ? 'text-green-400 font-semibold' : 
+                  line?.includes('govindam-vats') ? 'text-cyan-400' :
+                  line?.includes('Gova') || line?.includes('Govindam') ? 'text-blue-400' :
+                  line?.includes('AI Developer') ? 'text-purple-400' :
+                  line?.includes('machine-learning') || line?.includes('web-development') || line?.includes('consulting') ? 'text-yellow-400' :
+                  line?.includes('Ready to build') ? 'text-pink-400' :
+                  line?.includes('Innovation') ? 'text-orange-400 italic' :
+                  line?.includes('Welcome') ? 'text-emerald-400' :
                   'text-gray-300'}
               `}>
-                {line || ''}
-                {index === currentLine && currentChar <= lines[currentLine]?.length && (
-                  <span className="animate-pulse text-green-400">|</span>
+                {line}
+                {index === currentLine && !isComplete && (
+                  <span className="animate-pulse text-green-400 ml-1">█</span>
                 )}
               </span>
             </div>
           ))}
+          {isComplete && (
+            <div className="mt-4">
+              <span className="text-green-400 animate-pulse">$ █</span>
+            </div>
+          )}
         </div>
       </div>
     </div>

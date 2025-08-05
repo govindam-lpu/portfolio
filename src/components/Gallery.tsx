@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Camera, Music, Utensils, Sparkles } from 'lucide-react';
 
 const Gallery = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -26,39 +25,22 @@ const Gallery = () => {
     };
   }, []);
 
-  const hobbies = [
-    {
-      id: 1,
-      title: "Photography",
-      description: "Capturing moments and stories through my lens",
-      image: "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=300&fit=crop",
-      icon: Camera,
-      category: "Creative"
-    },
-    {
-      id: 2,
-      title: "Cooking",
-      description: "Experimenting with flavors and creating culinary experiences",
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=300&fit=crop",
-      icon: Utensils,
-      category: "Culinary"
-    },
-    {
-      id: 3,
-      title: "Guitar",
-      description: "Creating melodies and expressing emotions through music",
-      image: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=500&h=300&fit=crop",
-      icon: Music,
-      category: "Music"
-    },
-    {
-      id: 4,
-      title: "Card Magic",
-      description: "Mastering the art of illusion and sleight of hand",
-      image: "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=500&h=300&fit=crop",
-      icon: Sparkles,
-      category: "Magic"
-    }
+  const images = [
+    "https://images.unsplash.com/photo-1556909114-4f63e8d3eb3a?w=400&h=300&fit=crop", // Cooking
+    "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=400&h=500&fit=crop", // Card Magic
+    "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=400&h=600&fit=crop", // Guitar
+    "https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=500&h=400&fit=crop", // Photography
+    "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=400&fit=crop", // Reading
+    "https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=600&h=400&fit=crop", // Travel
+    "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400&h=500&fit=crop", // Food
+    "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=500&h=400&fit=crop", // Music
+    "https://images.unsplash.com/photo-1471919743851-c4df8b6ee606?w=400&h=600&fit=crop", // Nature
+    "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=400&h=300&fit=crop", // Art
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=500&fit=crop", // Mountain
+    "https://images.unsplash.com/photo-1527838832700-5059252407fa?w=400&h=400&fit=crop", // Gaming
+    "https://images.unsplash.com/photo-1574169208507-84376144848b?w=600&h=300&fit=crop", // Fitness
+    "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=400&h=500&fit=crop", // Coffee
+    "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=500&h=400&fit=crop"  // Music Production
   ];
 
   return (
@@ -77,64 +59,53 @@ const Gallery = () => {
           </p>
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {hobbies.map((hobby, index) => (
-            <div
-              key={hobby.id}
-              className={`group transform transition-all duration-1000 ${
-                isVisible 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-12 opacity-0'
-              }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
-            >
-              <div className="relative overflow-hidden rounded-xl bg-surface-elevated border border-border hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-accent/20">
-                {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+        {/* Photo Collage Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 auto-rows-auto">
+          {images.map((image, index) => {
+            // Create varied sizes for collage effect
+            const getGridClasses = (index: number) => {
+              const patterns = [
+                'col-span-1 row-span-1',
+                'col-span-2 row-span-1', 
+                'col-span-1 row-span-2',
+                'col-span-1 row-span-1',
+                'col-span-2 row-span-2',
+                'col-span-1 row-span-1',
+                'col-span-1 row-span-2',
+                'col-span-2 row-span-1',
+                'col-span-1 row-span-1',
+                'col-span-1 row-span-1',
+                'col-span-2 row-span-1',
+                'col-span-1 row-span-2',
+                'col-span-1 row-span-1',
+                'col-span-2 row-span-1',
+                'col-span-1 row-span-1'
+              ];
+              return patterns[index % patterns.length];
+            };
+
+            return (
+              <div
+                key={index}
+                className={`${getGridClasses(index)} group relative overflow-hidden rounded-xl transform transition-all duration-700 hover:scale-105 hover:z-10 ${
+                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                }`}
+                style={{ 
+                  transitionDelay: isVisible ? `${index * 80}ms` : '0ms' 
+                }}
+              >
+                <div className="aspect-square w-full h-full min-h-[150px]">
                   <img
-                    src={hobby.image}
-                    alt={hobby.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    src={image}
+                    alt={`Gallery image ${index + 1}`}
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 group-hover:contrast-110"
+                    loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Icon Overlay */}
-                  <div className="absolute top-4 right-4 p-2 bg-surface/90 backdrop-blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <hobby.icon className="h-5 w-5 text-accent" />
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-xs font-medium text-accent bg-accent/10 px-2 py-1 rounded-full">
-                      {hobby.category}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
-                    {hobby.title}
-                  </h3>
-                  
-                  <p className="text-text-subtle text-sm leading-relaxed">
-                    {hobby.description}
-                  </p>
-                </div>
-
-                {/* Hover Effect Border */}
-                <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Text */}
-        <div className={`mt-12 text-center transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <p className="text-text-subtle text-sm max-w-xl mx-auto">
-            These hobbies fuel my creativity and bring fresh perspectives to my technical work, 
-            helping me approach problems with innovative solutions.
-          </p>
+            );
+          })}
         </div>
       </div>
     </section>
