@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ExternalLink, Github } from 'lucide-react';
+import ndaProject1 from '@/assets/nda-project-1.jpg';
+import ndaProject2 from '@/assets/nda-project-2.jpg';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -115,8 +117,16 @@ const Projects = () => {
                 {/* Project Image */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <Card className="aspect-video bg-gradient-warm border-none hover-lift overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                      <div className="text-6xl font-bold text-accent/30">{project.number}</div>
+                    <div className="w-full h-full relative">
+                      <img 
+                        src={project.number === "01" ? ndaProject1 : ndaProject2}
+                        alt={`${project.title} visual`}
+                        className="w-full h-full object-cover transition-all duration-500 hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent" />
+                      <div className="absolute top-4 right-4 bg-black/20 backdrop-blur-sm px-3 py-1 rounded-lg">
+                        <span className="text-white text-sm font-mono">Project {project.number}</span>
+                      </div>
                     </div>
                   </Card>
                 </div>

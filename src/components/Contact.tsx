@@ -75,17 +75,20 @@ const Contact = () => {
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com/govindam-lpu"
+      href: "https://github.com/govindam-lpu",
+      hoverColor: "hover:bg-gray-900 hover:text-white dark:hover:bg-white dark:hover:text-gray-900"
     },
     {
       icon: Linkedin,
       label: "LinkedIn", 
-      href: "https://www.linkedin.com/in/govindam-vats/"
+      href: "https://www.linkedin.com/in/govindam-vats/",
+      hoverColor: "hover:bg-blue-600 hover:text-white"
     },
     {
       icon: Instagram,
       label: "Instagram", 
-      href: "https://www.instagram.com/govind_umm"
+      href: "https://www.instagram.com/govind_umm",
+      hoverColor: "hover:bg-pink-600 hover:text-white"
     }
   ];
 
@@ -205,7 +208,7 @@ const Contact = () => {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-surface rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:-translate-y-1"
+                    className={`p-3 bg-surface rounded-lg border border-border transition-all duration-300 hover:-translate-y-1 ${social.hoverColor}`}
                   >
                     <social.icon className="h-6 w-6" />
                   </a>

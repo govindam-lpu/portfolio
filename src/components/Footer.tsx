@@ -4,10 +4,10 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: Github, href: "https://github.com/govindam-lpu", label: "GitHub" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/govindam-vats/", label: "LinkedIn" },
-    { icon: Instagram, href: "https://www.instagram.com/govind_umm", label: "Instagram" },
-    { icon: Mail, href: "mailto:govindamvats.32@gmail.com", label: "Email" }
+    { icon: Github, href: "https://github.com/govindam-lpu", label: "GitHub", hoverColor: "hover:text-gray-900 dark:hover:text-white" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/govindam-vats/", label: "LinkedIn", hoverColor: "hover:text-blue-600" },
+    { icon: Instagram, href: "https://www.instagram.com/govind_umm", label: "Instagram", hoverColor: "hover:text-pink-600" },
+    { icon: Mail, href: "mailto:govindamvats.32@gmail.com", label: "Email", hoverColor: "hover:text-red-500" }
   ];
 
   return (
@@ -32,7 +32,7 @@ const Footer = () => {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-text-subtle hover:text-accent transition-colors duration-300"
+                className={`p-2 text-text-subtle transition-colors duration-300 ${social.hoverColor}`}
                 aria-label={social.label}
               >
                 <social.icon className="h-5 w-5" />

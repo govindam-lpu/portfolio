@@ -91,7 +91,7 @@ const Gallery = () => {
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
                 }`}
                 style={{ 
-                  transitionDelay: isVisible ? `${index * 80}ms` : '0ms' 
+                  transitionDelay: isVisible ? `${index * 40}ms` : '0ms' 
                 }}
               >
                 <div className="aspect-square w-full h-full min-h-[150px]">
@@ -100,6 +100,7 @@ const Gallery = () => {
                     alt={`Gallery image ${index + 1}`}
                     className="w-full h-full object-cover transition-all duration-500 group-hover:brightness-110 group-hover:contrast-110"
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
