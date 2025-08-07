@@ -38,16 +38,34 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'), 
+      subject: formData.get('subject'),
+      message: formData.get('message')
+    };
+
+    try {
+      // Create mailto link with form data
+      const mailtoLink = `mailto:govindamvats.32@gmail.com?subject=${encodeURIComponent(data.subject as string)}&body=${encodeURIComponent(`From: ${data.name} (${data.email})\n\nMessage:\n${data.message}`)}`;
+      window.open(mailtoLink);
+      
+      toast({
+        title: "Email client opened!",
+        description: "Your default email client should open with the message pre-filled.",
+      });
+
+      (e.target as HTMLFormElement).reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Could not open email client. Please email me directly at govindamvats.32@gmail.com",
+        variant: "destructive"
+      });
+    }
 
     setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
   };
 
   const contactInfo = [

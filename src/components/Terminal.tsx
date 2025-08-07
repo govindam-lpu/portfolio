@@ -16,18 +16,11 @@ const Terminal = () => {
     "I mean I can't actually see you,",
     "but we can always change that haha.",
     "",
-    "$ echo 'Let me tell you about myself...'",
-    "Let me tell you about myself...",
-    "",
-    "$ cat message.txt",
     "Scroll through, and see if I am",
     "the perfect fit for you?",
     "And if we match, hit me up.",
     "I look forward to hearing from you.",
     "Have fun!",
-    "",
-    "$ echo 'Ready to connect!'",
-    "Ready to connect!",
     "",
     "$ _"
   ];
@@ -38,7 +31,7 @@ const Terminal = () => {
       return;
     }
 
-    const currentLineText = lines[currentLine];
+    const currentLineText = lines[currentLine] || "";
     
     if (currentChar <= currentLineText.length) {
       const timer = setTimeout(() => {
@@ -53,7 +46,7 @@ const Terminal = () => {
           setTimeout(() => {
             setCurrentLine(prev => prev + 1);
             setCurrentChar(0);
-          }, currentLineText.startsWith('$') ? 1000 : 500);
+          }, currentLineText.startsWith && currentLineText.startsWith('$') ? 1000 : 500);
         } else {
           setCurrentChar(prev => prev + 1);
         }
@@ -82,14 +75,11 @@ const Terminal = () => {
           {displayText.map((line, index) => (
             <div key={index} className="mb-1 leading-relaxed">
               <span className={`
-                ${line?.startsWith('$') ? 'text-green-400 font-semibold' : 
-                  line?.includes('govindam-vats') ? 'text-cyan-400' :
-                  line?.includes('Gova') || line?.includes('Govindam') ? 'text-blue-400' :
-                  line?.includes('AI Developer') ? 'text-purple-400' :
-                  line?.includes('machine-learning') || line?.includes('web-development') || line?.includes('consulting') ? 'text-yellow-400' :
-                  line?.includes('Ready to build') ? 'text-pink-400' :
-                  line?.includes('Innovation') ? 'text-orange-400 italic' :
-                  line?.includes('Welcome') ? 'text-emerald-400' :
+                ${(line && line.startsWith && line.startsWith('$')) ? 'text-green-400 font-semibold' : 
+                  (line && line.includes && line.includes('govindam-vats')) ? 'text-cyan-400' :
+                  (line && line.includes && (line.includes('Gova') || line.includes('Govindam'))) ? 'text-blue-400' :
+                  (line && line.includes && line.includes('Hi!')) ? 'text-yellow-400' :
+                  (line && line.includes && line.includes('fun')) ? 'text-pink-400' :
                   'text-gray-300'}
               `}>
                 {line}
