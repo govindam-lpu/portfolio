@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { ExternalLink, Github } from 'lucide-react';
-import ndaProject1 from '@/assets/nda-project-1.jpg';
-import ndaProject2 from '@/assets/nda-project-2.jpg';
+import TradingDashboard from './TradingDashboard';
+import VoiceflowChatbot from './VoiceflowChatbot';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -117,41 +117,11 @@ const Projects = () => {
                 {/* Interactive Project Module */}
                 <div className={`${index % 2 === 1 ? 'lg:order-2' : ''}`}>
                   <Card className="aspect-video bg-gradient-warm border-none hover-lift overflow-hidden relative group">
-                    <div className="w-full h-full relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center">
-                      {/* Animated Code Background */}
-                      <div className="absolute inset-0 opacity-20">
-                        <div className="absolute top-4 left-4 text-green-400 font-mono text-xs animate-pulse">
-                          {project.number === "01" ? "model.predict(market_data)" : "chatbot.respond(user_input)"}
-                        </div>
-                        <div className="absolute top-8 left-4 text-blue-400 font-mono text-xs delay-300 animate-pulse">
-                          {project.number === "01" ? "accuracy: 94.2%" : "nlp_confidence: 0.96"}
-                        </div>
-                        <div className="absolute bottom-8 right-4 text-purple-400 font-mono text-xs delay-500 animate-pulse">
-                          {project.number === "01" ? "real_time: true" : "response_time: 120ms"}
-                        </div>
-                      </div>
-                      
-                      {/* Central Icon */}
-                      <div className="relative z-10 p-8 bg-accent/10 rounded-full border border-accent/20 group-hover:scale-110 transition-transform duration-500">
-                        {project.number === "01" ? (
-                          <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-                          </svg>
-                        ) : (
-                          <svg className="w-16 h-16 text-accent" fill="currentColor" viewBox="0 0 20 20">
-                            <path fillRule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clipRule="evenodd" />
-                          </svg>
-                        )}
-                      </div>
-                      
-                      {/* Corner Badge */}
-                      <div className="absolute top-4 right-4 bg-black/40 backdrop-blur-sm px-3 py-1 rounded-lg border border-white/10">
-                        <span className="text-white text-sm font-mono">NDA Project {project.number}</span>
-                      </div>
-                      
-                      {/* Subtle Pattern Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent" />
-                    </div>
+                    {project.number === "01" ? (
+                      <TradingDashboard />
+                    ) : (
+                      <VoiceflowChatbot />
+                    )}
                   </Card>
                 </div>
 
