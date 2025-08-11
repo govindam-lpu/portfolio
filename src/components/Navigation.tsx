@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Download, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import govaLogo from '@/assets/gova-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -62,13 +63,14 @@ const Navigation = () => {
             {/* Logo */}
             <button 
               onClick={scrollToTop}
-              className="text-xl font-bold hover:text-accent transition-colors duration-300"
+              className="text-xl font-bold hover:text-accent transition-colors duration-300 flex items-center gap-2"
             >
-              yourname.dev
+              <img src={govaLogo} alt="Gova Vision" className="w-6 h-6" />
+              gova.vision
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-8 ml-8">
               {navItems.map((item) => (
                 <button
                   key={item.name}

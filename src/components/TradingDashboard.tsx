@@ -56,18 +56,18 @@ const TradingDashboard = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-6 overflow-hidden relative">
+    <div className="w-full h-full bg-surface border border-border rounded-lg p-6 overflow-hidden relative">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-white font-bold text-lg">Live Trading Dashboard</h3>
-          <p className="text-gray-400 text-sm font-mono">
+          <h3 className="text-foreground font-bold text-lg">Live Trading Dashboard</h3>
+          <p className="text-muted-foreground text-sm font-mono">
             {currentTime.toLocaleTimeString()}
           </p>
         </div>
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          <span className="text-green-400 text-sm font-mono">LIVE</span>
+          <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
+          <span className="text-accent text-sm font-mono">LIVE</span>
         </div>
       </div>
 
@@ -76,22 +76,22 @@ const TradingDashboard = () => {
         {cryptoData.map((crypto, index) => (
           <div
             key={crypto.symbol}
-            className="bg-black/30 backdrop-blur-sm border border-white/10 rounded-lg p-4 hover:bg-black/40 transition-all duration-300"
+            className="bg-card border border-border rounded-lg p-4 hover:bg-surface-elevated transition-all duration-300"
             style={{ animationDelay: `${index * 200}ms` }}
           >
             <div className="flex items-center justify-between mb-2">
-              <span className="text-white font-bold text-lg">{crypto.symbol}</span>
+              <span className="text-foreground font-bold text-lg">{crypto.symbol}</span>
               {crypto.changePercent > 0 ? (
-                <TrendingUp className="w-5 h-5 text-green-400" />
+                <TrendingUp className="w-5 h-5 text-accent" />
               ) : (
-                <TrendingDown className="w-5 h-5 text-red-400" />
+                <TrendingDown className="w-5 h-5 text-destructive" />
               )}
             </div>
             <div className="space-y-1">
-              <p className="text-white font-mono text-xl">
+              <p className="text-foreground font-mono text-xl">
                 ${crypto.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </p>
-              <p className={`text-sm font-mono ${crypto.changePercent > 0 ? 'text-green-400' : 'text-red-400'}`}>
+              <p className={`text-sm font-mono ${crypto.changePercent > 0 ? 'text-accent' : 'text-destructive'}`}>
                 {crypto.changePercent > 0 ? '+' : ''}{crypto.changePercent.toFixed(2)}%
               </p>
             </div>
@@ -100,10 +100,10 @@ const TradingDashboard = () => {
       </div>
 
       {/* Mini Chart Simulation */}
-      <div className="bg-black/20 backdrop-blur-sm border border-white/10 rounded-lg p-4">
+      <div className="bg-card border border-border rounded-lg p-4">
         <div className="flex items-center justify-between mb-3">
-          <span className="text-white font-medium">Market Trend</span>
-          <span className="text-green-400 text-sm font-mono">Accuracy: 94.2%</span>
+          <span className="text-foreground font-medium">Market Trend</span>
+          <span className="text-accent text-sm font-mono">Accuracy: 94.2%</span>
         </div>
         <div className="flex items-end justify-between h-16 space-x-1">
           {Array.from({ length: 20 }).map((_, i) => (
@@ -121,13 +121,13 @@ const TradingDashboard = () => {
       </div>
 
       {/* Floating Code Elements */}
-      <div className="absolute top-4 left-4 text-green-400 font-mono text-xs opacity-30 animate-pulse">
+      <div className="absolute top-4 left-4 text-accent font-mono text-xs opacity-30 animate-pulse">
         model.predict(market_data)
       </div>
-      <div className="absolute top-8 left-4 text-blue-400 font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '300ms' }}>
+      <div className="absolute top-8 left-4 text-accent font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '300ms' }}>
         accuracy: 94.2%
       </div>
-      <div className="absolute bottom-8 right-4 text-purple-400 font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '500ms' }}>
+      <div className="absolute bottom-8 right-4 text-accent font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '500ms' }}>
         real_time: true
       </div>
     </div>
