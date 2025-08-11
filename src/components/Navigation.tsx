@@ -52,13 +52,13 @@ const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-in-out ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-md border-b border-border shadow-soft' 
-          : 'bg-transparent'
+          ? 'top-4 bg-background/95 backdrop-blur-md border border-border shadow-lg rounded-full max-w-4xl w-[calc(100%-2rem)]' 
+          : 'top-0 bg-transparent w-full max-w-6xl'
       }`}>
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
+        <div className={`mx-auto ${isScrolled ? 'px-6' : 'px-6 max-w-6xl'}`}>
+          <div className={`flex items-center justify-between ${isScrolled ? 'h-12' : 'h-16'}`}>
             {/* Logo */}
             <button 
               onClick={scrollToTop}

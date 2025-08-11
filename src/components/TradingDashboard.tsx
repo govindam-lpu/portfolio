@@ -9,26 +9,48 @@ interface CryptoData {
 }
 
 const TradingDashboard = () => {
-  const [cryptoData, setCryptoData] = useState<CryptoData[]>([
-    { symbol: 'BTC', price: 67420.50, change: 1250.30, changePercent: 1.89 },
-    { symbol: 'ETH', price: 3840.25, change: -85.40, changePercent: -2.18 },
-    { symbol: 'SOL', price: 185.30, change: 12.80, changePercent: 7.42 },
-  ]);
-
+  const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [loading, setLoading] = useState(true);
+
+  const fetchCryptoData = async () => {
+    try {
+      // Note: In production, API keys should be stored securely on the backend
+      const symbols = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+      const promises = symbols.map(async (symbol) => {
+        const response = await fetch(`https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`);
+        const data = await response.json();
+        
+        return {
+          symbol: symbol.replace('USDT', ''),
+          price: parseFloat(data.lastPrice),
+          change: parseFloat(data.priceChange),
+          changePercent: parseFloat(data.priceChangePercent)
+        };
+      });
+      
+      const results = await Promise.all(promises);
+      setCryptoData(results);
+      setLoading(false);
+    } catch (error) {
+      console.error('Error fetching crypto data:', error);
+      // Fallback to demo data
+      setCryptoData([
+        { symbol: 'BTC', price: 67420.50, change: 1250.30, changePercent: 1.89 },
+        { symbol: 'ETH', price: 3840.25, change: -85.40, changePercent: -2.18 },
+        { symbol: 'SOL', price: 185.30, change: 12.80, changePercent: 7.42 },
+      ]);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
+    fetchCryptoData();
+    
     const interval = setInterval(() => {
       setCurrentTime(new Date());
-      
-      // Simulate price updates
-      setCryptoData(prev => prev.map(crypto => ({
-        ...crypto,
-        price: crypto.price + (Math.random() - 0.5) * 100,
-        change: crypto.change + (Math.random() - 0.5) * 50,
-        changePercent: crypto.changePercent + (Math.random() - 0.5) * 2,
-      })));
-    }, 3000);
+      fetchCryptoData();
+    }, 10000); // Update every 10 seconds
 
     return () => clearInterval(interval);
   }, []);
