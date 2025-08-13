@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Download, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import govaLogo from '@/assets/gova-logo.png';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -63,14 +62,17 @@ const Navigation = () => {
             {/* Logo */}
             <button 
               onClick={scrollToTop}
-              className="text-xl font-bold hover:text-accent transition-colors duration-300 flex items-center gap-2"
+              className={`font-bold hover:text-accent transition-colors duration-300 ${
+                isScrolled ? 'text-lg' : 'text-2xl'
+              }`}
             >
-              <img src={govaLogo} alt="Gova Vision" className="w-6 h-6" />
-              gova.vision
+              Gova's Vision
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 ml-8">
+            <div className={`hidden md:flex items-center space-x-8 ${
+              isScrolled ? 'ml-12' : 'ml-16'
+            }`}>
               {navItems.map((item) => (
                 <button
                   key={item.name}
@@ -105,11 +107,11 @@ const Navigation = () => {
                 variant="ghost"
                 size="sm"
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="group relative overflow-hidden p-2 hover:bg-accent/10 rounded-full"
+                className="group relative overflow-hidden p-2 hover:bg-accent/10 rounded-full w-8 h-8"
               >
                 <div className="absolute inset-0 bg-accent/10 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 ease-out"></div>
-                <Sun className="h-4 w-4 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0 relative z-10" />
-                <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100 inset-0 m-auto relative z-10" />
+                <Sun className="h-4 w-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
+                <Moon className="h-4 w-4 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
                 <span className="sr-only">Toggle theme</span>
               </Button>
               
@@ -162,11 +164,11 @@ const Navigation = () => {
                   variant="ghost"
                   size="sm"
                   onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className="w-full justify-center hover:bg-accent/10"
+                  className="w-full justify-center hover:bg-accent/10 relative"
                 >
                   <Sun className="h-4 w-4 mr-2 rotate-0 scale-100 transition-all duration-300 dark:-rotate-90 dark:scale-0" />
-                  <Moon className="absolute h-4 w-4 mr-2 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100" />
-                  Toggle Theme
+                  <Moon className="h-4 w-4 mr-2 rotate-90 scale-0 transition-all duration-300 dark:rotate-0 dark:scale-100 absolute left-4" />
+                  <span className="ml-6">Toggle Theme</span>
                 </Button>
                 
                 <Button 

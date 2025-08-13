@@ -42,11 +42,12 @@ const VoiceflowChatbot = () => {
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-surface via-background to-surface-elevated flex items-center justify-center p-8 relative overflow-hidden">
+    <div className="w-full h-full bg-gradient-to-br from-muted/30 via-background to-surface flex items-center justify-center p-8 relative overflow-hidden">
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-accent blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-accent/50 blur-3xl"></div>
+      <div className="absolute inset-0 opacity-[0.03]">
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-accent/40 blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full bg-accent/30 blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full bg-accent/20 blur-2xl"></div>
       </div>
 
       <div className="text-center space-y-4 max-w-sm relative z-10">

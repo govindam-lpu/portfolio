@@ -56,9 +56,15 @@ const TradingDashboard = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-surface border border-border rounded-lg p-6 overflow-hidden relative">
+    <div className="w-full h-full bg-gradient-to-br from-surface via-background to-card border border-border rounded-lg p-6 overflow-hidden relative">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute top-1/3 left-1/3 w-32 h-32 rounded-full bg-accent blur-2xl"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-24 h-24 rounded-full bg-accent/70 blur-2xl"></div>
+      </div>
+
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex items-center justify-between mb-6 relative z-10">
         <div>
           <h3 className="text-foreground font-bold text-lg">Live Trading Dashboard</h3>
           <p className="text-muted-foreground text-sm font-mono">
@@ -72,7 +78,7 @@ const TradingDashboard = () => {
       </div>
 
       {/* Crypto Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6 relative z-10">
         {cryptoData.map((crypto, index) => (
           <div
             key={crypto.symbol}
@@ -100,7 +106,7 @@ const TradingDashboard = () => {
       </div>
 
       {/* Mini Chart Simulation */}
-      <div className="bg-card border border-border rounded-lg p-4">
+      <div className="bg-card border border-border rounded-lg p-4 relative z-10">
         <div className="flex items-center justify-between mb-3">
           <span className="text-foreground font-medium">Market Trend</span>
           <span className="text-accent text-sm font-mono">Accuracy: 94.2%</span>
@@ -118,17 +124,6 @@ const TradingDashboard = () => {
             />
           ))}
         </div>
-      </div>
-
-      {/* Floating Code Elements */}
-      <div className="absolute top-4 left-4 text-accent font-mono text-xs opacity-30 animate-pulse">
-        model.predict(market_data)
-      </div>
-      <div className="absolute top-8 left-4 text-accent font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '300ms' }}>
-        accuracy: 94.2%
-      </div>
-      <div className="absolute bottom-8 right-4 text-accent font-mono text-xs opacity-30 animate-pulse" style={{ animationDelay: '500ms' }}>
-        real_time: true
       </div>
     </div>
   );
