@@ -66,7 +66,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section id="skills" ref={sectionRef} className="py-24 px-6">
+    <section id="skills" ref={sectionRef} className="py-16 md:py-24 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>

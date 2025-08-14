@@ -16,8 +16,8 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6">
-      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <section className="min-h-screen flex items-center justify-center relative px-4 md:px-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Terminal */}
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
           <Terminal />
@@ -47,7 +47,7 @@ const Hero = () => {
               user-centric solutions.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-6">
               <Button 
                 variant="accent" 
                 size="lg"
@@ -68,7 +68,7 @@ const Hero = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start space-x-6 pt-8">
+            <div className="flex justify-center lg:justify-start space-x-4 md:space-x-6 pt-6 md:pt-8">
               <a href="https://github.com/govindam-lpu" className="text-text-subtle hover:text-accent transition-colors duration-300">
                 <Github className="h-6 w-6" />
               </a>

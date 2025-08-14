@@ -26,7 +26,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="py-24 px-6">
+    <section id="about" ref={sectionRef} className="py-16 md:py-24 px-4 md:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`mb-16 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
@@ -37,7 +37,7 @@ const About = () => {
           <h2 className="section-title">About Me</h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Content */}
 
           <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
@@ -62,18 +62,18 @@ const About = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 pt-8 border-t border-border">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 pt-6 md:pt-8 border-t border-border">
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">12+</div>
-                <div className="text-sm text-text-subtle mt-1">Projects Delivered</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">12+</div>
+                <div className="text-xs md:text-sm text-text-subtle mt-1">Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">2</div>
-                <div className="text-sm text-text-subtle mt-1">Years Experience</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">2</div>
+                <div className="text-xs md:text-sm text-text-subtle mt-1">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">25+</div>
-                <div className="text-sm text-text-subtle mt-1">Technologies</div>
+                <div className="text-2xl md:text-3xl font-bold text-accent">25+</div>
+                <div className="text-xs md:text-sm text-text-subtle mt-1">Technologies</div>
               </div>
             </div>
           </div>
