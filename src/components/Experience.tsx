@@ -202,13 +202,19 @@ const Experience = () => {
                 <h4 className="font-semibold text-sm md:text-base">Certifications</h4>
                 <div className="space-y-2">
                   {[
-                    "AWS Certified Solutions Architect",
-                    "Google Cloud Professional Developer", 
-                    "MongoDB Certified Developer"
-                  ].map((cert) => (
-                    <div key={cert} className="text-xs md:text-sm text-text-subtle flex items-start gap-2">
-                      <span className="text-accent mt-1">•</span>
-                      {cert}
+                    { course: "Crash Course on Python", provider: "Google", grade: "94%" },
+                    { course: "Wind Energy", provider: "Technical University of Denmark (DTU)", grade: "91.91%" },
+                    { course: "The Complete Full-Stack Web Development Bootcamp", provider: "Dr. Angela Yu", grade: "Completed" }
+                  ].map((cert, index) => (
+                    <div key={index} className="text-xs md:text-sm text-text-subtle">
+                      <div className="flex items-start gap-2">
+                        <span className="text-accent mt-1">•</span>
+                        <div>
+                          <span className="font-medium">{cert.course}</span>
+                          <span className="text-text-subtle"> by {cert.provider}</span>
+                          <span className="text-accent block text-xs">Grade: {cert.grade}</span>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>

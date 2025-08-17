@@ -32,29 +32,20 @@ const Terminal = () => {
     }
 
     const currentLineText = lines[currentLine] || "";
+    const delay = currentLineText.startsWith('$') ? 1500 : currentLineText === "" ? 300 : 800;
     
-    if (currentChar <= currentLineText.length) {
-      const timer = setTimeout(() => {
-        setDisplayText(prev => {
-          const newDisplay = [...prev];
-          newDisplay[currentLine] = currentLineText.substring(0, currentChar);
-          return newDisplay;
-        });
-        
-        if (currentChar === currentLineText.length) {
-          // Line complete, move to next line after delay
-          setTimeout(() => {
-            setCurrentLine(prev => prev + 1);
-            setCurrentChar(0);
-          }, currentLineText.startsWith && currentLineText.startsWith('$') ? 1000 : 500);
-        } else {
-          setCurrentChar(prev => prev + 1);
-        }
-      }, currentLineText === "" ? 100 : Math.random() * 50 + 30);
+    const timer = setTimeout(() => {
+      setDisplayText(prev => {
+        const newDisplay = [...prev];
+        newDisplay[currentLine] = currentLineText;
+        return newDisplay;
+      });
+      
+      setCurrentLine(prev => prev + 1);
+    }, delay);
 
-      return () => clearTimeout(timer);
-    }
-  }, [currentLine, currentChar, lines]);
+    return () => clearTimeout(timer);
+  }, [currentLine, lines]);
 
   return (
     <div className="w-full max-w-lg mx-auto lg:mx-0">
