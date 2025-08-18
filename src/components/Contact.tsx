@@ -47,7 +47,33 @@ const Contact = () => {
     };
 
     try {
-      // Create mailto link with form data
+      // Send email using EmailJS or similar service
+      const response = await fetch('https://formsubmit.co/govindamvats.32@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          subject: data.subject,
+          message: data.message,
+          _next: window.location.href,
+          _captcha: false
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Message sent successfully!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      // Fallback to mailto
       const mailtoLink = `mailto:govindamvats.32@gmail.com?subject=${encodeURIComponent(data.subject as string)}&body=${encodeURIComponent(`From: ${data.name} (${data.email})\n\nMessage:\n${data.message}`)}`;
       window.open(mailtoLink);
       
@@ -55,14 +81,7 @@ const Contact = () => {
         title: "Email client opened!",
         description: "Your default email client should open with the message pre-filled.",
       });
-
       (e.target as HTMLFormElement).reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Could not open email client. Please email me directly at govindamvats.32@gmail.com",
-        variant: "destructive"
-      });
     }
 
     setIsSubmitting(false);

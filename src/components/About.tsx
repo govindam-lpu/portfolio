@@ -78,13 +78,15 @@ const About = () => {
             </div>
           </div>
 
-          {/* Visual Element */}
+          {/* Personal Image */}
           <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}>
             <div className="relative">
               <div className="aspect-square bg-gradient-warm rounded-2xl border border-border/50 overflow-hidden hover-lift">
-                <div className="w-full h-full bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center">
-                  <div className="text-6xl font-bold text-accent/30">02</div>
-                </div>
+                <img 
+                  src="/lovable-uploads/5941941a-9c00-4e7e-8f82-1721f306840b.png" 
+                  alt="Govindam Vats at tech event" 
+                  className="w-full h-full object-cover object-center"
+                />
               </div>
               <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent/10 rounded-full blur-xl"></div>
             </div>

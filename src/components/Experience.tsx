@@ -40,28 +40,18 @@ const Experience = () => {
       tech: ["Python", "scikit-learn", "pandas", "REST APIs"]
     },
     {
-      period: "Aug 2024 - Dec 2024",
+      period: "Oct 2023 - Dec 2024",
       company: "Mridanga Media",
       position: "Web Developer & AI Chatbot Developer",
-      description: "Developed customer-service chatbot integrating Voiceflow, Zoho, OpenAI. Created React/Angular web apps and managed client requirements.",
+      description: "Progressed from internship to full-time role. Developed customer-service chatbot integrating Voiceflow, Zoho, OpenAI with WhatsApp API. Created React/Angular web apps and managed client requirements.",
       achievements: [
-        "Built intelligent chatbot for automated customer service",
-        "Developed React/Angular web applications",
-        "Managed client requirements and project delivery"
+        "Advanced from intern to full-time developer in 10 months",
+        "Built intelligent chatbot with WhatsApp integration for automated customer service",
+        "Developed React/Angular web applications from concept to deployment",
+        "Managed client requirements and project delivery across multiple domains",
+        "Gained expertise in API integrations and complex troubleshooting"
       ],
-      tech: ["Voiceflow", "Zoho", "OpenAI", "React", "Angular"]
-    },
-    {
-      period: "Oct 2023 - Jul 2024",
-      company: "Mridanga Media",
-      position: "Junior Developer (Internship)",
-      description: "Collaborated on AI chatbot and mobile app features. Gained proficiency in API integrations and troubleshooting.",
-      achievements: [
-        "Contributed to AI chatbot development",
-        "Learned API integrations and troubleshooting",
-        "Supported mobile app feature development"
-      ],
-      tech: ["JavaScript", "API Integration", "Mobile Development"]
+      tech: ["Voiceflow", "Zoho", "OpenAI", "WhatsApp API", "React", "Angular", "JavaScript"]
     },
     {
       period: "Ongoing",

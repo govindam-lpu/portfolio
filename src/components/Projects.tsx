@@ -44,8 +44,8 @@ const Projects = () => {
     {
       number: "02", 
       title: "AI Chatbot Integration",
-      description: "Voiceflow–Zoho–OpenAI chatbot for automated customer service at Mridanga Media.",
-      tech: ["Voiceflow", "Zoho", "OpenAI API"],
+      description: "Voiceflow–Zoho–OpenAI chatbot with WhatsApp integration for automated customer service at Mridanga Media.",
+      tech: ["Voiceflow", "Zoho", "OpenAI API", "WhatsApp API"],
       github: "https://github.com/govindam-lpu",
       live: "Private",
       featured: true,
