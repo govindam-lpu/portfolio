@@ -258,8 +258,8 @@ const Contact = () => {
               <div className="space-y-3">
                 <h4 className="font-semibold">Currently Available</h4>
                 <p className="text-text-subtle text-sm">
-                  I'm open to AI consulting, web development projects, and technical roles. 
-                  Let's discuss how we can leverage technology to solve your challenges.
+                  I'm open to consulting, web development projects, and technical roles. 
+                  Let's discuss how we can leverage technology to solve challenges.
                 </p>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
