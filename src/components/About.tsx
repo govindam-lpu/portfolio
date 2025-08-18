@@ -46,19 +46,14 @@ const About = () => {
                 I'm an AI Developer & Technical Consultant at One Profit, where I build machine-learning 
                 trade prediction models in Python to guide financial decisions. I've crafted responsive 
                 web apps with React, Angular, and WordPress, and integrated intelligent chatbots using 
-                Voiceflow, Zoho, and OpenAI.
+                Voiceflow, Zoho, Whatsapp API and OpenAI.
               </p>
 
               <p className="text-lg text-text-subtle leading-relaxed">
-                Outside code, I'm passionate about card magic, guitar performance, photography/videography 
-                (DaVinci Resolve, Lightroom), and travel—hobbies that fuel my creativity and problem-solving 
-                approach.
+                Outside work, I'm passionate about card magic, music(concerts, guitars, take your pick haha), photography/videography 
+                (DaVinci Resolve, Lightroom), and travel—hobbies that fuel my creativity and motivate me to always do the best.
               </p>
-              
-              <p className="text-lg text-text-subtle leading-relaxed">
-                When not coding, I perform card magic and mentalism, play guitar, cook vegetarian meals, 
-                read novels, write poetry, watch films/TV, and stay active with regular workouts.
-              </p>
+            
             </div>
 
             {/* Stats */}
