@@ -1,9 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { Card } from '@/components/ui/card';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const [emblaRef] = useEmblaCarousel({ loop: true, align: 'start' });
+  const isMobile = useIsMobile();
 
   const skillCategories = [
     {
@@ -81,52 +85,103 @@ const Skills = () => {
         </div>
 
         {/* Skills Dashboard */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <Card
-              key={category.title}
-              className={`${category.color} p-6 hover-lift border group transform transition-all duration-1000 delay-${(categoryIndex + 1) * 100} ${
-                isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
-              }`}
-            >
-              <div className="space-y-4">
-                {/* Category Header */}
-                <div className="flex items-center gap-3">
-                  <span className="text-2xl">{category.icon}</span>
-                  <h3 className="text-lg font-semibold">{category.title}</h3>
-                </div>
-                
-                {/* Skills Tags */}
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <span
-                      key={skill}
-                      className={`px-3 py-1.5 bg-background/60 backdrop-blur-sm border border-border/50 rounded-full text-xs font-medium transition-all duration-300 delay-${skillIndex * 50} hover:bg-accent hover:text-accent-foreground hover:scale-105 cursor-default ${
-                        isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
-                      }`}
-                      style={{
-                        animationDelay: `${(categoryIndex + 1) * 200 + skillIndex * 100}ms`
-                      }}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-                
-                {/* Category Stats */}
-                <div className="pt-2 border-t border-border/20">
-                  <div className="flex items-center justify-between text-xs text-text-subtle">
-                    <span>{category.skills.length} Technologies</span>
-                    <div className="flex items-center gap-1">
-                      <div className="w-2 h-2 rounded-full bg-accent"></div>
-                      <span>Active Use</span>
+        {isMobile ? (
+          <div className="overflow-hidden" ref={emblaRef}>
+            <div className="flex gap-4">
+              {skillCategories.map((category, categoryIndex) => (
+                <Card
+                  key={category.title}
+                  className={`${category.color} p-4 hover-lift border group transform transition-all duration-1000 delay-${(categoryIndex + 1) * 100} min-w-[280px] flex-shrink-0 ${
+                    isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+                  }`}
+                >
+                  <div className="space-y-4">
+                    {/* Category Header */}
+                    <div className="flex items-center gap-3">
+                      <span className="text-xl">{category.icon}</span>
+                      <h3 className="text-base font-semibold">{category.title}</h3>
+                    </div>
+                    
+                    {/* Skills Tags */}
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skill}
+                          className={`px-2 py-1 bg-background/60 backdrop-blur-sm border border-border/50 rounded-full text-xs font-medium transition-all duration-300 delay-${skillIndex * 50} hover:bg-accent hover:text-accent-foreground hover:scale-105 cursor-default ${
+                            isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+                          }`}
+                          style={{
+                            animationDelay: `${(categoryIndex + 1) * 200 + skillIndex * 100}ms`
+                          }}
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Category Stats */}
+                    <div className="pt-2 border-t border-border/20">
+                      <div className="flex items-center justify-between text-xs text-text-subtle">
+                        <span>{category.skills.length} Technologies</span>
+                        <div className="flex items-center gap-1">
+                          <div className="w-2 h-2 rounded-full bg-accent"></div>
+                          <span>Active Use</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            {skillCategories.map((category, categoryIndex) => (
+              <Card
+                key={category.title}
+                className={`${category.color} p-6 hover-lift border group transform transition-all duration-1000 delay-${(categoryIndex + 1) * 100} ${
+                  isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-8 opacity-0 scale-95'
+                }`}
+              >
+                <div className="space-y-4">
+                  {/* Category Header */}
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{category.icon}</span>
+                    <h3 className="text-lg font-semibold">{category.title}</h3>
+                  </div>
+                  
+                  {/* Skills Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <span
+                        key={skill}
+                        className={`px-3 py-1.5 bg-background/60 backdrop-blur-sm border border-border/50 rounded-full text-xs font-medium transition-all duration-300 delay-${skillIndex * 50} hover:bg-accent hover:text-accent-foreground hover:scale-105 cursor-default ${
+                          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
+                        }`}
+                        style={{
+                          animationDelay: `${(categoryIndex + 1) * 200 + skillIndex * 100}ms`
+                        }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Category Stats */}
+                  <div className="pt-2 border-t border-border/20">
+                    <div className="flex items-center justify-between text-xs text-text-subtle">
+                      <span>{category.skills.length} Technologies</span>
+                      <div className="flex items-center gap-1">
+                        <div className="w-2 h-2 rounded-full bg-accent"></div>
+                        <span>Active Use</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Card>
-          ))}
-        </div>
+              </Card>
+            ))}
+          </div>
+        )}
         
         {/* Featured Technologies */}
         <div className={`mt-16 transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
@@ -135,7 +190,7 @@ const Skills = () => {
             <p className="text-text-subtle text-sm">Primary technologies I work with daily</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4">
             {[
               { name: "React", icon: "⚛️" },
               { name: "Python", icon: "🐍" },
@@ -146,15 +201,15 @@ const Skills = () => {
             ].map((tech, index) => (
               <Card
                 key={tech.name}
-                className={`p-4 text-center hover-lift border group cursor-default transform transition-all duration-500 delay-${index * 100} ${
+                className={`p-3 sm:p-4 text-center hover-lift border group cursor-default transform transition-all duration-500 delay-${index * 100} ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
                 }`}
               >
-                <div className="space-y-2">
-                  <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                <div className="space-y-1 sm:space-y-2">
+                  <div className="text-lg sm:text-2xl group-hover:scale-110 transition-transform duration-300">
                     {tech.icon}
                   </div>
-                  <div className="text-sm font-medium">{tech.name}</div>
+                  <div className="text-xs sm:text-sm font-medium">{tech.name}</div>
                 </div>
               </Card>
             ))}

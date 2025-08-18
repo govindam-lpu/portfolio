@@ -62,11 +62,11 @@ const Navigation = () => {
             {/* Logo */}
             <button 
               onClick={scrollToTop}
-              className={`font-bold hover:text-accent transition-colors duration-300 ${
+              className={`font-bold hover:text-accent transition-all duration-500 ease-in-out ${
                 isScrolled ? 'text-lg' : 'text-2xl'
-              }`}
+              } ${isMobileMenuOpen ? 'md:transform-none transform -translate-x-16' : 'transform-none'}`}
             >
-              Gova's Vision
+              <span className="text-center block">Gova's Vision</span>
             </button>
 
             {/* Desktop Navigation */}
@@ -131,9 +131,10 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md">
-            <div className="px-6 py-4 space-y-4">
+        <div className={`md:hidden border-t border-border bg-background/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        }`}>
+          <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
@@ -181,7 +182,6 @@ const Navigation = () => {
                 </Button>
               </div>
             </div>
-          )}
       </nav>
 
       {/* Section Indicators */}
