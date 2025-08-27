@@ -42,7 +42,7 @@ const Footer = () => {
         </div>
 
         {/* Additional Links */}
-        <div className="mt-8 pt-6 border-t border-border text-center">
+        {/* <div className="mt-8 pt-6 border-t border-border text-center">
           <p className="text-text-subtle text-xs">
             This website is open source and available on{' '}
             <a 
@@ -54,7 +54,7 @@ const Footer = () => {
               GitHub
             </a>
           </p>
-        </div>
+        </div> */}
       </div>
     </footer>
   );

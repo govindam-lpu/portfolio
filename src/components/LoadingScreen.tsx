@@ -87,7 +87,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               className="space-y-4"
             >
               <h2 className="text-2xl font-bold gradient-text">
-                Loading Experience
+                Hello World! Cliche
               </h2>
               <div className="flex items-center justify-center space-x-2">
                 {[0, 1, 2].map((i) => (
@@ -115,7 +115,7 @@ const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
               transition={{ delay: 1 }}
               className="text-text-subtle text-sm max-w-md mx-auto italic"
             >
-              "The best magic tricks are performed with code" ✨
+              "The noblest art is to make others happy"
             </motion.p>
           </div>
         </motion.div>

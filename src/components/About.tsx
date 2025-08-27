@@ -43,15 +43,15 @@ const About = () => {
           <div className={`space-y-6 transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>
             <div className="space-y-6">
               <p className="text-lg text-text-subtle leading-relaxed">
-                I'm an AI Developer & Technical Consultant at One Profit, where I build machine-learning 
+                I'm a Developer & Technical Consultant at One Profit, where I build machine-learning 
                 trade prediction models in Python to guide financial decisions. I've crafted responsive 
-                web apps with React, Angular, and WordPress, and integrated intelligent chatbots using 
+                web apps with React, Angular, and WordPress, and integrated chatbots using 
                 Voiceflow, Zoho, Whatsapp API and OpenAI.
               </p>
 
               <p className="text-lg text-text-subtle leading-relaxed">
                 Outside work, I'm passionate about card magic, music(concerts, guitars, take your pick haha), photography/videography 
-                (DaVinci Resolve, Lightroom), and travel—hobbies that fuel my creativity and motivate me to always do the best.
+                (DaVinci Resolve, Lightroom), and travel-hobbies that fuel my creativity and motivate me to always do the best.
               </p>
             
             </div>

@@ -44,7 +44,7 @@ const Projects = () => {
     {
       number: "02", 
       title: "AI Chatbot Integration",
-      description: "Voiceflow–Zoho–OpenAI chatbot with WhatsApp integration for automated customer service at Mridanga Media.",
+      description: "Voiceflow-Zoho-OpenAI and Voicedlow-WhatsApp chatbot integration for automated customer service at Mridanga Media.",
       tech: ["Voiceflow", "Zoho", "OpenAI API", "WhatsApp API"],
       github: "https://github.com/govindam-lpu",
       live: "Private",
@@ -66,7 +66,7 @@ const Projects = () => {
       description: "Interactive React dashboard visualizing climate data with historical analysis.",
       tech: ["React", "D3.js", "Express", "MongoDB"],
       github: "https://github.com/govindam-lpu",
-      live: "Coming Soon",
+      live: "Completed",
       featured: false
     },
     {
@@ -99,8 +99,7 @@ const Projects = () => {
           </div>
           <h2 className="section-title">Featured Work</h2>
           <p className="text-lg text-text-subtle max-w-2xl">
-            A collection of projects that showcase my skills in full-stack development, 
-            UI/UX design, and problem-solving.
+            A collection of projects that showcase my skills and work so far.
           </p>
         </div>
 
@@ -109,9 +108,10 @@ const Projects = () => {
           {featuredProjects.map((project, index) => (
             <div 
               key={project.number}
-              className={`transform transition-all duration-1000 delay-${(index + 1) * 200} ${
+              className={`transform transition-all duration-1000 ${
                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
               }`}
+              style={{ transitionDelay: `${(index + 1) * 200}ms` }}
             >
               <div className={`grid lg:grid-cols-2 gap-8 lg:gap-12 items-center ${index % 2 === 1 ? 'lg:grid-cols-2' : ''}`}>
                 {/* Interactive Project Module */}
@@ -209,7 +209,7 @@ const Projects = () => {
                 key={project.number} 
                 className="p-6 hover-lift border-border transition-all duration-500 hover:shadow-lg hover:border-accent/30 group"
                 style={{
-                  animation: `fadeInUp 0.6s ease-out ${(index + 1) * 0.2}s both`
+                  transitionDelay: `${(index + 1) * 200}ms`
                 }}
               >
                 <div className="space-y-4">
@@ -243,7 +243,7 @@ const Projects = () => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="individual-site-card group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 block"
-                            style={{ animationDelay: `${index * 100}ms` }}>
+                            style={{ transitionDelay: `${index * 100}ms` }}>
                            <div className="flex items-center justify-between">
                              <div className="space-y-1">
                                <h5 className="font-medium text-sm group-hover:text-accent transition-colors">
@@ -282,7 +282,7 @@ const Projects = () => {
               key={project.number} 
               className="p-8 hover-lift border-border transition-all duration-500 hover:shadow-lg hover:border-accent/30 group mt-8"
               style={{
-                animation: `fadeInUp 0.6s ease-out ${0.6}s both`
+                transitionDelay: `600ms`
               }}
             >
               <div className="space-y-6">
@@ -331,7 +331,7 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             className="group relative overflow-hidden rounded-lg border border-border/50 p-4 hover:border-accent/50 hover:bg-accent/5 transition-all duration-300 hover:shadow-md block"
                             style={{
-                              animation: `slideInRight 0.4s ease-out ${siteIndex * 0.1}s both`
+                              transitionDelay: `${siteIndex * 100}ms`
                             }}>
                            <div className="flex items-center justify-between">
                              <div className="space-y-2">

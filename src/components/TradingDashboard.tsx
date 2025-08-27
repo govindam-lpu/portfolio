@@ -56,7 +56,7 @@ const TradingDashboard = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-surface via-background to-card border border-border rounded-lg p-3 sm:p-6 overflow-hidden relative">
+    <div className="w-full h-full bg-gradient-to-br from-surface via-background to-card border border-border rounded-lg p-4 sm:p-5 md:p-6 overflow-hidden relative">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02]">
         <div className="absolute top-1/3 left-1/3 w-32 h-32 rounded-full bg-accent blur-2xl"></div>
@@ -64,7 +64,7 @@ const TradingDashboard = () => {
       </div>
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 relative z-10 gap-2">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-3 sm:mb-5 md:mb-6 relative z-10 gap-2">
         <div>
           <h3 className="text-foreground font-bold text-base sm:text-lg">Live Trading Dashboard</h3>
           <p className="text-muted-foreground text-xs sm:text-sm font-mono">
@@ -78,11 +78,11 @@ const TradingDashboard = () => {
       </div>
 
       {/* Crypto Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6 relative z-10">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-4 sm:mb-6 relative z-10">
         {cryptoData.map((crypto, index) => (
           <div
             key={crypto.symbol}
-            className="bg-card border border-border rounded-lg p-3 sm:p-4 hover:bg-surface-elevated transition-all duration-300"
+            className="bg-card border border-border rounded-lg p-3 sm:p-4 hover:bg-surface-elevated transition-all duration-300 min-h-[84px]"
             style={{ animationDelay: `${index * 200}ms` }}
           >
             <div className="flex items-center justify-between mb-2">
@@ -94,7 +94,7 @@ const TradingDashboard = () => {
               )}
             </div>
             <div className="space-y-1">
-              <p className="text-foreground font-mono text-sm sm:text-xl">
+              <p className="text-foreground font-mono text-base sm:text-lg md:text-xl">
                 ${crypto.price.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </p>
               <p className={`text-xs sm:text-sm font-mono ${crypto.changePercent > 0 ? 'text-accent' : 'text-destructive'}`}>

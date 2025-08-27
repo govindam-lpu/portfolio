@@ -30,10 +30,10 @@ const Experience = () => {
     {
       period: "Jan 2025 - Present",
       company: "One Profit",
-      position: "AI Developer & Technical Consultant",
-      description: "Built Python-based trade-prediction models leveraging pandas, scikit-learn, and external APIs. Advised on AI implementation, system architecture, and deployment pipelines.",
+      position: "AI Developer & Consultant",
+      description: "Building Python-based trade-prediction models leveraging pandas, scikit-learn, and external APIs. Advised on system architecture and pipeline deployments.",
       achievements: [
-        "Developed machine-learning models for financial predictions",
+        "Developing machine-learning models for financial predictions",
         "Implemented real-time data ingestion pipelines",
         "Advised on AI implementation strategies"
       ],
@@ -42,11 +42,11 @@ const Experience = () => {
     {
       period: "Oct 2023 - Dec 2024",
       company: "Mridanga Media",
-      position: "Web Developer & AI Chatbot Developer",
-      description: "Progressed from internship to full-time role. Developed customer-service chatbot integrating Voiceflow, Zoho, OpenAI with WhatsApp API. Created React/Angular web apps and managed client requirements.",
+      position: "AI Chatbot and Software Developer",
+      description: "Progressed from internship to full-time role. Developed customer service chatbot integrating Voiceflow, Zoho, OpenAI with WhatsApp API. Created React/Angular web apps and managed client requirements.",
       achievements: [
         "Advanced from intern to full-time developer in 10 months",
-        "Built intelligent chatbot with WhatsApp integration for automated customer service",
+        "Built chatbot with WhatsApp integration for automated customer service",
         "Developed React/Angular web applications from concept to deployment",
         "Managed client requirements and project delivery across multiple domains",
         "Gained expertise in API integrations and complex troubleshooting"
@@ -72,7 +72,7 @@ const Experience = () => {
       period: "2020 - 2024",
       institution: "Lovely Professional University",
       degree: "B.Tech in Computer Science & Engineering",
-      description: "Comprehensive program covering software engineering, AI/ML, web technologies, and system design.",
+      description: "Bachelor's program covering software engineering, AI/ML, web technologies, and system design.",
       achievements: [
         "Graduated with strong technical foundation",
         "Specialized in AI and web development",
@@ -105,16 +105,17 @@ const Experience = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
-          {/* Experience */}
-          <div className="lg:col-span-2 order-2 lg:order-1">
+          {/* Experience first on mobile/tablet */}
+          <div className="lg:col-span-2 order-1 lg:order-1">
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">Professional Experience</h3>
             <div className="space-y-4 sm:space-y-6 md:space-y-8">
               {experiences.map((exp, index) => (
                 <div 
                   key={index}
-                  className={`transform transition-all duration-1000 delay-${(index + 1) * 200} ${
+                  className={`transform transition-all duration-1000 ${
                     isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'
                   }`}
+                  style={{ transitionDelay: `${(index + 1) * 200}ms` }}
                 >
                   <Card className="p-3 sm:p-4 md:p-6 hover-lift border-border">
                     <div className="space-y-3 md:space-y-4">
@@ -158,7 +159,7 @@ const Experience = () => {
           </div>
 
           {/* Education & Certifications */}
-          <div className={`order-1 lg:order-2 transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 lg:translate-x-0 opacity-100' : 'translate-y-12 lg:translate-y-0 lg:translate-x-12 opacity-0'}`}>
+          <div className={`order-2 lg:order-2 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 lg:translate-x-0 opacity-100' : 'translate-y-12 lg:translate-y-0 lg:translate-x-12 opacity-0'}`} style={{ transitionDelay: '600ms' }}>
             <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 md:mb-8">Education</h3>
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
               {education.map((edu, index) => (
@@ -187,7 +188,7 @@ const Experience = () => {
                 </Card>
               ))}
 
-              {/* Certifications */}
+              {/* Certifications (after education, already below) */}
               <div className="space-y-3 md:space-y-4">
                 <h4 className="font-semibold text-sm md:text-base">Certifications</h4>
                 <div className="space-y-2">

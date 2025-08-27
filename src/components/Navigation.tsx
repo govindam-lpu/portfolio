@@ -55,7 +55,7 @@ const Navigation = () => {
       <nav className={`fixed left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-in-out ${
         isScrolled 
           ? 'top-4 bg-background/95 backdrop-blur-md border border-border shadow-lg rounded-full max-w-4xl w-[calc(100%-2rem)]' 
-          : 'top-0 bg-transparent w-full max-w-6xl'
+          : 'top-0 bg-background/80 backdrop-blur-md border-border w-full max-w-6xl'
       }`}>
         <div className={`mx-auto ${isScrolled ? 'px-6' : 'px-6 max-w-6xl'}`}>
           <div className={`flex items-center justify-between ${isScrolled ? 'h-12' : 'h-16'}`}>
@@ -64,14 +64,14 @@ const Navigation = () => {
               onClick={scrollToTop}
               className={`font-bold hover:text-accent transition-all duration-500 ease-in-out ${
                 isScrolled ? 'text-lg' : 'text-2xl'
-              } ${isMobileMenuOpen ? 'md:transform-none transform -translate-x-16' : 'transform-none'}`}
+              }`}
             >
               <span className="text-center block">Gova's Vision</span>
             </button>
 
             {/* Desktop Navigation */}
-            <div className={`hidden md:flex items-center space-x-8 ${
-              isScrolled ? 'ml-12' : 'ml-16'
+            <div className={`hidden md:flex items-center space-x-6 ${
+              isScrolled ? 'ml-8' : 'ml-12'
             }`}>
               {navItems.map((item) => (
                 <button
@@ -131,8 +131,8 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className={`md:hidden border-t border-border bg-background/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
+        <div className={`md:hidden border-t border-border bg-background transition-all duration-300 ease-in-out ${
+          isMobileMenuOpen ? 'max-h-[70vh] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
         }`}>
           <div className="px-6 py-4 space-y-4">
               {navItems.map((item) => (

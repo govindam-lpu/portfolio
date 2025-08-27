@@ -32,32 +32,32 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Sarah Johnson",
-      position: "Product Manager at TechCorp",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
-      text: "Working with this developer was exceptional. The AI chatbot integration exceeded our expectations and significantly improved our customer service efficiency."
+      name: "Chandramukhi Mueller",
+      position: "Astrosarasvat",
+      image: "https://astrosarasvat.com/wp-content/uploads/2024/03/home-banner.jpg?w=150&h=150&fit=crop&crop=face",
+      text: "It was an absolute pleasure working with Govindam on my astrology website. I had been wanting to create it for a long time but only had a rough idea of what I wanted. He not only provided excellent website development services, but also truly invested himself in understanding my work and vision. He gave me valuable advice on how to shape the site and guided me through the entire process, from scratch to launch. His dedication, professionalism, and support have been outstanding. I highly recommend Govindam to anyone looking for reliable and insightful website development services."
     },
     {
       id: 2,
-      name: "Michael Chen",
-      position: "CTO at StartupXYZ",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
-      text: "The trade prediction model delivered remarkable accuracy. The technical expertise and attention to detail in the implementation was truly impressive."
+      name: "Saakshi Prakash",
+      position: "Founder, Yofit",
+      image: "https://yofit.in/wp-content/uploads/2025/05/saakshi5-scaled.jpeg?w=150&h=150&fit=crop&crop=face",
+      text: "Working with Govindam was a truly wonderful experience. He was extremely cooperative and always sincere in everything he did. He kept us in the loop at every step and made sure we were fully informed throughout the process. What touched us the most was how he treated our brand like his own. We've never come across someone who worked with so much dedication and heart."
     },
     {
       id: 3,
-      name: "Emily Rodriguez",
-      position: "Marketing Director at HealthCo",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
-      text: "Our WordPress website was transformed into a powerful platform. The SEO optimization and user experience improvements drove significant business growth."
+      name: "Karan Bhatia",
+      position: "Founder, Yofit",
+      image: "https://yofit.in/wp-content/uploads/2025/08/about_Karan-scaled.jpg?w=150&h=150&fit=crop&crop=face",
+      text: "After approaching a few website designers, our path finally led us to Govindam! We are truly thankful to our dear friend who recommended Govindam to us for our website designing. Govindam is absolutely cooperative and suggests the best and most suitable design for our website with which we are very happy! His way of understanding our requirement and approach to our business helped keep our website quite simple yet unique and just the way we wanted it to be. Even though our requirements were little odd, Govindam managed to deliver us just what we wanted! Absolutely grateful to Govindam for our lovely website!"
     },
-    {
-      id: 4,
-      name: "David Park",
-      position: "Founder at InnovateLab",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-      text: "The React dashboard for our climate data was both beautiful and functional. Complex data visualization made simple and intuitive for our team."
-    }
+    // {
+    //   id: 4,
+    //   name: "David Park",
+    //   position: "Founder at InnovateLab",
+    //   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    //   text: "The React dashboard for our climate data was both beautiful and functional. Complex data visualization made simple and intuitive for our team."
+    // }
   ];
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const Testimonials = () => {
               </div>
               
               {/* Testimonial Text */}
-              <blockquote className="text-lg md:text-xl leading-relaxed text-text-subtle italic text-center">
+              <blockquote className="text-lg md:text-xl leading-relaxed text-text-subtle italic text-justify">
                 "{testimonials[currentIndex].text}"
               </blockquote>
             </div>

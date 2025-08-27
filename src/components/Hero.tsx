@@ -16,7 +16,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-4 md:px-6">
+    <section className="min-h-screen flex items-center justify-center relative px-4 md:px-6 pt-20 md:pt-0">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         {/* Terminal */}
         <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-12 opacity-0'}`}>

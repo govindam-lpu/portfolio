@@ -47,18 +47,17 @@ const Contact = () => {
     };
 
     try {
-      // Send email using EmailJS or similar service
-      const response = await fetch('https://formsubmit.co/govindamvats.32@gmail.com', {
+      const response = await fetch('https://formsubmit.co/ajax/govindamvats.32@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           name: data.name,
           email: data.email,
           subject: data.subject,
           message: data.message,
-          _next: window.location.href,
           _captcha: false
         })
       });
@@ -140,9 +139,9 @@ const Contact = () => {
           </div>
           <h2 className="section-title">Let's Work Together</h2>
           <p className="text-lg text-text-subtle max-w-2xl mx-auto">
-            Ready to build intelligent solutions together? Whether you need AI-driven 
-            applications, modern web development, or technical consultation, I'm here 
-            to help turn your vision into reality.
+            So what do you think? Are we a good fit? Whether it's AI-driven or
+            modern web applications, or technical consultation, I'm here 
+            to turn your vision into reality. Hit me up!
           </p>
         </div>
 
@@ -259,7 +258,7 @@ const Contact = () => {
                 <h4 className="font-semibold">Currently Available</h4>
                 <p className="text-text-subtle text-sm">
                   I'm open to consulting, web development projects, and technical roles. 
-                  Let's discuss how we can leverage technology to solve challenges.
+                  Let's discuss how we can use my skills to solve your problems.
                 </p>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-3 h-3 bg-green-500 rounded-full"></div>
