@@ -64,7 +64,7 @@ const Testimonials = () => {
     if (isVisible) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-      }, 5000);
+      }, 8000);
     }
 
     return () => {
