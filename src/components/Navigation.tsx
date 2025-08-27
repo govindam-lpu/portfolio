@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Download, Sun, Moon } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import resumePdf from '@/assets/govindam_resume.pdf'; 
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -95,8 +96,8 @@ const Navigation = () => {
                 className="group relative overflow-hidden border-accent/30 text-accent hover:text-background transition-all duration-300"
                 asChild
               >
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="relative z-10 flex items-center">
-                  <div className="absolute inset-0 bg-foreground transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+                <a href={resumePdf} download="Govindam_Vats_Resume.pdf" target="_blank" rel="noopener noreferrer" className="group relative z-10 flex items-center">
+                  <div className="absolute inset-0 bg-foreground -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
                   <Download className="h-4 w-4 mr-2 group-hover:animate-bounce relative z-10" />
                   <span className="relative z-10">Resume</span>
                 </a>
@@ -154,7 +155,7 @@ const Navigation = () => {
                   className="w-full justify-center border-accent/30 text-accent hover:bg-accent hover:text-background"
                   asChild
                 >
-                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href={resumePdf} download="Govindam_Vats_Resume.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="h-4 w-4 mr-2" />
                     Resume
                   </a>

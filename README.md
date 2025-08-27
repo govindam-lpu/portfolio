@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: 
+**URL**: https://govasvision.vercel.app/
 
 ## What technologies are used for this project?
 

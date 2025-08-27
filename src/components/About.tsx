@@ -50,7 +50,7 @@ const About = () => {
               </p>
 
               <p className="text-lg text-text-subtle leading-relaxed">
-                Outside work, I'm passionate about card magic, music(concerts, guitars, take your pick haha), photography/videography 
+                Outside work, I'm passionate about cinema and TV shows, card magic, music(concerts, guitars, take your pick haha), photography/videography 
                 (DaVinci Resolve, Lightroom), and travel-hobbies that fuel my creativity and motivate me to always do the best.
               </p>
             

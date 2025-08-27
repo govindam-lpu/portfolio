@@ -53,10 +53,10 @@ const Testimonials = () => {
     },
     // {
     //   id: 4,
-    //   name: "David Park",
-    //   position: "Founder at InnovateLab",
+    //   name: "Sunil Kumar",
+    //   position: "Proprietor, Excellent Engg.",
     //   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    //   text: "The React dashboard for our climate data was both beautiful and functional. Complex data visualization made simple and intuitive for our team."
+    //   text: "We initially reached out to Govindam to seek advice on how to setup our online shop and services. He was very helpful and provided us with a lot of information and resources to help us get started. At the end, he designed everything for us and we are very happy with the results."
     // }
   ];
 
